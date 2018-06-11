@@ -1,0 +1,69 @@
+<div class="HomeCardContainer" id="MapHomeCard_2" data-rf-test-id="react-data-photo-row-2"><div data-rf-test-name="mapHomeCard" class="MapHomeCardReact HomeCard"><div class="homecard" data-rf-test-name="basicNode-homeCard"><a class="cover-all" href="/WA/Bothell/20056-94th-Dr-NE-98011/unit-8/home/59704159" target="_blank"><div class="PhotoSlider photoContainer"><div class="scrollable" style="transform:translateX(0px)"><div class="slider-item" data-rf-test-id="slider-item-0" data-rf-test-name="basic-card-photo" style="transform: translateX(0px);"><div class="HomeCardImage" title="Photo of 20056 94th Dr NE, Bothell, WA 98011" style="height: 100%; background-size: cover; background-position: center center; background-image: url(&quot;https://ssl.cdn-redfin.com/photo/1/islphoto/686/genIsl.1302686_1.jpg&quot;);"></div></div></div></div></a><div class="media-index font-size-smaller inline-block" style="opacity:0">1 of 25</div><div class="topright"><div class="FavoriteExtension clickable fav-off" data-rf-test-id="favoriteExtension" role="checkbox" aria-label="favorite button" aria-checked="false"><svg class="SvgIcon rfSvg favorite-actionable clickable favorite-icon" style="height:32px;width:32px"><svg viewBox="0 0 36 36"><path class="favorite-actionable-outline outline" d="M26.685 3.152c-2.787 0-5.904 1.183-8.538 4.327-2.635-3.145-5.751-4.327-8.54-4.327-2.046 0-3.915.637-5.285 1.605-3.238 2.286-4.749 7.092-2.886 11.662 2.413 5.919 14.655 15.018 16.482 16.352.071.051.15.077.229.077a.386.386 0 0 0 .228-.077c1.842-1.339 14.237-10.514 16.482-16.352 1.771-4.604.352-9.376-2.884-11.662-1.373-.969-3.243-1.605-5.288-1.605zm0 1.5c1.613 0 3.225.485 4.423 1.33 2.805 1.982 3.793 6.145 2.349 9.898-1.644 4.276-10.094 11.334-15.309 15.196-5.153-3.832-13.549-10.871-15.323-15.223-1.705-4.182-.102-8.131 2.363-9.871 1.196-.845 2.807-1.33 4.419-1.33 1.923 0 4.765.658 7.39 3.79l1.15 1.372 1.15-1.372c2.624-3.132 5.466-3.79 7.388-3.79"></path><path d="M26.685 4.652c1.613 0 3.225.485 4.423 1.33 2.805 1.982 3.793 6.145 2.349 9.898-1.644 4.276-10.094 11.334-15.309 15.196-5.153-3.832-13.549-10.871-15.323-15.223-1.705-4.182-.102-8.131 2.363-9.871 1.196-.845 2.807-1.33 4.419-1.33 1.923 0 4.765.658 7.39 3.79l1.15 1.372 1.15-1.372c2.624-3.132 5.466-3.79 7.388-3.79"></path></svg></svg></div></div><div class="topleft"><span class="HomeSash font-weight-bold" data-rf-test-id="home-sash" style="background-color:#c82021">LISTED BY REDFIN</span></div><a class="bottom link-override" href="/WA/Bothell/20056-94th-Dr-NE-98011/unit-8/home/59704159" title="20056 94th Dr NE, Bothell, WA 98011" target="_blank"><div class="left" role="heading"><div><span class="homeIcon redfin" data-rf-test-name="property-icon"><svg class="SvgIcon rfSvg home property-icon"><svg viewBox="0 0 24 24"><path d="M22.584 12.563L12.027 1.846 7.068 6.645V2.646H4.669v6.398L1.47 12.563h3.199v9.598h4.958v-6.399h4.799v6.399h4.959v-9.598z"></path></svg></svg></span><span class="homecardPrice font-size-small font-weight-bold" data-rf-test-name="homecard-price">$794,
+900</span></div><div class="addressDisplay font-size-smaller" data-rf-test-id="abp-homeinfo-homeaddress"><span data-rf-test-id="abp-streetLine">20056 94th Dr NE </span><span class="cityStateZip" data-rf-test-id="abp-cityStateZip">Bothell, WA 98011</span></div></div><div class="right" role="heading"><div class="HomeStats font-size-smaller"><div><div class="value">4</div><div data-rf-test-name="homecardLabel">Beds</div></div><div><div class="value">3.25</div><div data-rf-test-name="homecardLabel">Baths</div></div><div><div class="value">2,
+778</div><div data-rf-test-name="homecardLabel">Sq. Ft.</div></div></div><div class="disclaimer" title="Listing provided by NWMLS">Listing provided by NWMLS</div></div><script type="application/ld+json">[
+    {
+        "@context": "http://schema.org",
+        "name": "20056 94th Dr NE, Bothell, WA 98011",
+        "url": "/WA/Bothell/20056-94th-Dr-NE-98011/unit-8/home/59704159",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "20056 94th Dr NE",
+            "addressLocality": "Bothell",
+            "addressRegion": "WA",
+            "postalCode": "98011",
+            "addressCountry": "US"
+        },
+        "numberOfRooms": "4",
+        "@type": "SingleFamilyResidence"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "name": "20056 94th Dr NE, Bothell, WA 98011",
+        "offers": {
+            "@type": "Offer",
+            "price": "794900",
+            "priceCurrency": "USD"
+        },
+        "url": "/WA/Bothell/20056-94th-Dr-NE-98011/unit-8/home/59704159"
+    }
+]</script></a></div></div></div>
+
+
+
+
+
+
+
+
+<div class="HomeCardContainer" id="MapHomeCard_1" data-rf-test-id="react-data-photo-row-1"><div data-rf-test-name="mapHomeCard" class="MapHomeCardReact HomeCard"><div class="homecard" data-rf-test-name="basicNode-homeCard"><a class="cover-all" href="/WA/Bothell/10015-NE-155th-St-98011/home/284598" target="_blank"><div class="PhotoSlider photoContainer"><div class="scrollable" style="transform:translateX(0px)"><div class="slider-item" data-rf-test-id="slider-item-0" data-rf-test-name="basic-card-photo" style="transform: translateX(0px);"><div class="HomeCardImage" title="Photo of 10015 NE 155th St, Bothell, WA 98011" style="height: 100%; background-size: cover; background-position: center center; background-image: url(&quot;https://ssl.cdn-redfin.com/system_files/media/132188_JPG/genDesktopMapHomeCardUrl/item_2.jpg&quot;);"></div></div></div></div></a><div class="media-index font-size-smaller inline-block" style="opacity:0">1 of 32</div><div class="topright"><div class="FavoriteExtension clickable fav-off" data-rf-test-id="favoriteExtension" role="checkbox" aria-label="favorite button" aria-checked="false"><svg class="SvgIcon rfSvg favorite-actionable clickable favorite-icon" style="height:32px;width:32px"><svg viewBox="0 0 36 36"><path class="favorite-actionable-outline outline" d="M26.685 3.152c-2.787 0-5.904 1.183-8.538 4.327-2.635-3.145-5.751-4.327-8.54-4.327-2.046 0-3.915.637-5.285 1.605-3.238 2.286-4.749 7.092-2.886 11.662 2.413 5.919 14.655 15.018 16.482 16.352.071.051.15.077.229.077a.386.386 0 0 0 .228-.077c1.842-1.339 14.237-10.514 16.482-16.352 1.771-4.604.352-9.376-2.884-11.662-1.373-.969-3.243-1.605-5.288-1.605zm0 1.5c1.613 0 3.225.485 4.423 1.33 2.805 1.982 3.793 6.145 2.349 9.898-1.644 4.276-10.094 11.334-15.309 15.196-5.153-3.832-13.549-10.871-15.323-15.223-1.705-4.182-.102-8.131 2.363-9.871 1.196-.845 2.807-1.33 4.419-1.33 1.923 0 4.765.658 7.39 3.79l1.15 1.372 1.15-1.372c2.624-3.132 5.466-3.79 7.388-3.79"></path><path d="M26.685 4.652c1.613 0 3.225.485 4.423 1.33 2.805 1.982 3.793 6.145 2.349 9.898-1.644 4.276-10.094 11.334-15.309 15.196-5.153-3.832-13.549-10.871-15.323-15.223-1.705-4.182-.102-8.131 2.363-9.871 1.196-.845 2.807-1.33 4.419-1.33 1.923 0 4.765.658 7.39 3.79l1.15 1.372 1.15-1.372c2.624-3.132 5.466-3.79 7.388-3.79"></path></svg></svg></div></div><div class="topleft"><span class="HomeSash font-weight-bold" data-rf-test-id="home-sash" style="background-color:#c82021">REDFIN OPEN SAT,
+2PM TO 4PM</span></div><a class="bottom link-override" href="/WA/Bothell/10015-NE-155th-St-98011/home/284598" title="10015 NE 155th St, Bothell, WA 98011" target="_blank"><div class="left" role="heading"><div><span class="homeIcon redfin" data-rf-test-name="property-icon"><svg class="SvgIcon rfSvg rating badge"><svg viewBox="0 0 24 24"><path d="M8.005 8.198L.215 9.331a.25.25 0 0 0-.139.425l5.637 5.496-1.33 7.759a.25.25 0 0 0 .362.263l6.968-3.663 6.968 3.663a.25.25 0 0 0 .363-.263l-1.33-7.76 5.636-5.495a.25.25 0 0 0-.138-.425l-7.79-1.133-3.485-7.059a.25.25 0 0 0-.448 0L8.005 8.2" fill-rule="evenodd"></path></svg></svg><svg class="SvgIcon rfSvg home property-icon"><svg viewBox="0 0 24 24"><path d="M22.584 12.563L12.027 1.846 7.068 6.645V2.646H4.669v6.398L1.47 12.563h3.199v9.598h4.958v-6.399h4.799v6.399h4.959v-9.598z"></path></svg></svg></span><span class="homecardPrice font-size-small font-weight-bold" data-rf-test-name="homecard-price">$899,
+000</span></div><div class="addressDisplay font-size-smaller" data-rf-test-id="abp-homeinfo-homeaddress"><span data-rf-test-id="abp-streetLine">10015 NE 155th St </span><span class="cityStateZip" data-rf-test-id="abp-cityStateZip">Bothell, WA 98011</span></div></div><div class="right" role="heading"><div class="HomeStats font-size-smaller"><div><div class="value">4</div><div data-rf-test-name="homecardLabel">Beds</div></div><div><div class="value">2.5</div><div data-rf-test-name="homecardLabel">Baths</div></div><div><div class="value">2,
+832</div><div data-rf-test-name="homecardLabel">Sq. Ft.</div></div></div><div class="disclaimer" title="Listing provided by NWMLS">Listing provided by NWMLS</div></div><script type="application/ld+json">[
+    {
+        "@context": "http://schema.org",
+        "name": "10015 NE 155th St, Bothell, WA 98011",
+        "url": "/WA/Bothell/10015-NE-155th-St-98011/home/2884598",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "10015 NE 155th St",
+            "addressLocality": "Bothell",
+            "addressRegion": "WA",
+            "postalCode": "98011",
+            "addressCountry": "US"
+        },
+        "numberOfRooms": "4",
+        "@type": "SingleFamilyResidence"
+    },
+    {
+        "@context": "http://schema.org",
+        "@type": "Product",
+        "name": "10015 NE 155th St, Bothell, WA 98011",
+        "offers": {
+            "@type": "Offer",
+            "price": "899000",
+            "priceCurrency": "USD"
+        },
+        "url": "/WA/Bothell/10015-NE-155th-St-98011/home/284598"
+    }
+]</script></a></div></div></div>

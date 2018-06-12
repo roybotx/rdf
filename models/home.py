@@ -31,12 +31,14 @@ class Home(base):
     zipcode = Column(String(5))
     state = Column(String(4))
     link = Column(String(500), nullable=False)
+    listed_at_price = Column(Float)
+    on_redfin = Column(String(50))
     valid_keys = [
         "stats", "built", "address", "redfin_estimate",
         "last_sold_price", "beds", "bath", "sqft", "per_sqft", "hoa_dues",
         "property_type", "style", "floor_number", "stories", "views",
         "offer_review_date", "community", "county", "mls", "zipcode",
-        "state", "link"
+        "state", "link", "on_redfin", "listed_at_price"
     ]
 
     def __init__(self, dic):

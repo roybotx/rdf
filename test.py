@@ -69,8 +69,6 @@ def get_links():
     return links
     
 
-# for code in codes:
-# fetch_links("98011")
 links = get_links()
 units = []
 hm_db = Home_db_control("housing")
@@ -88,8 +86,42 @@ hm_db.close_engine()
 
 
 
+
+# import re
 # user_agent = UserAgent()        
 # headers = {"user-agent": user_agent.random}
-# resp = requests.get("https://www.redfin.com//WA/Bothell/12612-NE-199th-St-98011/home/55553146", headers = headers)
+# resp = requests.get("https://www.redfin.com/WA/Algona/230-4th-Ave-N-98001/home/365616", headers = headers)
 # html = BeautifulSoup(resp.text, "lxml") 
+# info = {}
+# section = html.find("div", {"class": "HomeInfo inline-block"})
+# top_stats = section.contents[0]
+# bot_stats = section.contents[1]
+# address = top_stats.contents[0].getText()
+# info["address"] = address
+# main_stats = top_stats.contents[1]
+# sqft = int()
+# per_sqft = int()
+# for index, block in enumerate(main_stats):
+#     if index == len(main_stats) - 1:
+#         break
+#     if len(block.contents) == 2:
+#         value = block.contents[0].getText()
+#         key = block.contents[1].getText()
+#         info[key] = value
+#     elif len(block.contents) == 1:
+#         sub_b = block.contents[0]
+#         sqft = sub_b.contents[0].getText()
+#         per_sqft = re.findall(r"\d+", sub_b.contents[3].getText())
+#         info["sqft"] = sqft
+#         info["per_sqft"] = per_sqft
+
+# stats_section = bot_stats.contents[1]
+# more_info = bot_stats.contents[0].contents[0]
+# stats = stats_section.find("span", {"class": "value"}).getText()
+# info["stats"] = stats
+# for i in range(1, len(more_info.contents)):
+#     key = more_info.contents[i].find("span", {"class": "label"}).getText()
+#     value = more_info.contents[i].find("span", {"class": "value"}).getText()
+#     info[key] = value
+
 # print(html)

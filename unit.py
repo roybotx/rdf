@@ -32,40 +32,70 @@ class unit(object):
         self.fetch_key_info()
         self.fetch_basic_info()
 
+    # def fetch_basic_info(self):
+    #     home_info = {}
+    #     basic_info_div = self.html.find("div", {"class": "HomeInfo inline-block"})
+    #     stats_and_built = basic_info_div.find("div", {"class": "HomeBottomStats"})
+    #     stats = stats_and_built.find(text = "Status: ").parent.nextSibling.getText()
+    #     home_info["stats"] = stats
+    #     built = stats_and_built.find(text = "Built: ").parent.nextSibling.getText()
+    #     home_info["built"] = built
+    #     basic_info = basic_info_div.find("div", {"class": "top-stats"})
+    #     addr = basic_info.next.getText()
+    #     home_info["address"] = addr
+    #     state_and_zipcode = addr.split(", ")[1].split(" ")
+    #     self.info["state"] = state_and_zipcode[0]
+    #     self.info["zipcode"] = state_and_zipcode[1]
+    #     regex = re.compile('.*HomeMainStats.*')
+    #     for div in basic_info.find("div", {"class": regex}):
+    #         if div.name == "div":
+    #             if "sqft" not in div.attrs.get("class"):
+    #                 key = div.contents[1].getText()
+    #                 value = div.contents[0].getText()
+    #                 if key in ["Redfin Estimate", "Last Sold Price", "Beds", "Bath"]:
+    #                     if key in ["Redfin Estimate", "Last Sold Price"]:
+    #                         value = value.replace(",", "").replace("$", "")
+    #                     home_info[unit.preprocess_field(key)] = value
+    #                 else:
+    #                     home_info[unit.preprocess_field(value)] = key
+    #             else:
+    #                 total = re.findall(r"\d+", div.getText())
+    #                 home_info["sqft"] = total[0]
+    #                 home_info["per_sqft"] = total[1]
+    #     self.info.update(home_info)
+
     def fetch_basic_info(self):
-        home_info = {}
-        basic_info_div = self.html.find("div", {"class": "HomeInfo inline-block"})
-        stats_and_built = basic_info_div.find("div", {"class": "HomeBottomStats"})
-        stats = stats_and_built.find(text = "Status: ").parent.nextSibling.getText()
-        home_info["stats"] = stats
-        if stats != "Sold":
-            built = stats_and_built.find(text = "On Redfin: ").parent.nextSibling.getText()
-        else:
-            built = stats_and_built.find(text = "Built: ").parent.nextSibling.getText()
-        home_info["built"] = built
-        basic_info = basic_info_div.find("div", {"class": "top-stats"})
-        addr = basic_info.next.getText()
-        home_info["address"] = addr
-        state_and_zipcode = addr.split(", ")[1].split(" ")
-        self.info["state"] = state_and_zipcode[0]
-        self.info["zipcode"] = state_and_zipcode[1]
-        regex = re.compile('.*HomeMainStats.*')
-        for div in basic_info.find("div", {"class": regex}):
-            if div.name == "div":
-                if "sqft" not in div.attrs.get("class"):
-                    key = div.contents[1].getText()
-                    value = div.contents[0].getText()
-                    if key in ["Redfin Estimate", "Last Sold Price", "Beds", "Bath"]:
-                        if key in ["Redfin Estimate", "Last Sold Price"]:
-                            value = value.replace(",", "").replace("$", "")
-                        home_info[unit.preprocess_field(key)] = value
-                    else:
-                        home_info[unit.preprocess_field(value)] = key
-                else:
-                    total = re.findall(r"\d+", div.getText())
-                    home_info["sqft"] = total[0]
-                    home_info["per_sqft"] = total[1]
-        self.info.update(home_info)
+        section = self.html.find("div", {"class": "HomeInfo inline-block"})
+        top_stats = section.contents[0]
+        bot_stats = section.contents[1]
+        address = top_stats.contents[0].getText()
+        self.info["address"] = address
+        main_stats = top_stats.contents[1]
+        sqft = int()
+        per_sqft = int()
+        for index, block in enumerate(main_stats):
+            if index == len(main_stats) - 1:
+                break
+            if len(block.contents) == 2:
+                value = block.contents[0].getText().replace("$", "").replace(",", "")
+                key = unit.preprocess_field(block.contents[1].getText())
+                self.info[key] = value
+            elif len(block.contents) == 1:
+                sub_b = block.contents[0]
+                sqft = sub_b.contents[0].getText().replace("$", "").replace(",", "")
+                per_sqft = re.findall(r"\d+", sub_b.contents[3].getText())[0]
+                self.info["sqft"] = sqft
+                self.info["per_sqft"] = per_sqft
+
+        stats_section = bot_stats.contents[1]
+        more_info = bot_stats.contents[0].contents[0]
+        stats = stats_section.find("span", {"class": "value"}).getText()
+        self.info["stats"] = stats
+        for i in range(1, len(more_info.contents)):
+            key = more_info.contents[i].find("span", {"class": "label"}).getText()
+            key = unit.preprocess_field(key)
+            value = more_info.contents[i].find("span", {"class": "value"}).getText()
+            self.info[key] = value
 
     def fetch_key_info(self):
         key_info_elements = self.html.find("div", {"class": "keyDetailsList"}).findAll("div", {"class": "keyDetail font-size-base"})

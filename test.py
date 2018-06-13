@@ -7,6 +7,7 @@ from unit import unit
 from models.home import Home
 from db_controls.db_controls import Home_db_control
 import time
+from my_logger import logger
 
 zipcodes = []
 
@@ -67,61 +68,37 @@ def get_links():
     cur.close()
     db.close()
     return links
-    
 
+    
 links = get_links()
+logger.info("{} links in total".format(len(links)))
 units = []
 hm_db = Home_db_control("housing")
-for link in links:
-    u = unit(BASE_URL + link)
-    u.fetch_data()
-    if u.need_to_check:
-        if len(hm_db.select_units(link = u.info["link"])) > 0:
-            print("already there, skipping")
-        else:
-            hm_db.add_unit(Home(u.info))        
+for idx, link in enumerate(links):
+    if idx > 100:
+        break
+    try:
+        u = unit(BASE_URL + link)
+        u.fetch_data()
+        if u.need_to_check:
+            hm_db.add_unit(Home(u.info))   
+    except Exception as e:
+        logger.error("error in {}.\n{}".format(link, str(e)))
 hm_db.close_engine()
 
 
 
-
-
-
+#   $4,868,000  5,774 Sq. Ft.   $843 / Sq. Ft.      5.5
 # import re
-# user_agent = UserAgent()        
-# headers = {"user-agent": user_agent.random}
-# resp = requests.get("https://www.redfin.com/WA/Algona/230-4th-Ave-N-98001/home/365616", headers = headers)
-# html = BeautifulSoup(resp.text, "lxml") 
-# info = {}
-# section = html.find("div", {"class": "HomeInfo inline-block"})
-# top_stats = section.contents[0]
-# bot_stats = section.contents[1]
-# address = top_stats.contents[0].getText()
-# info["address"] = address
-# main_stats = top_stats.contents[1]
-# sqft = int()
-# per_sqft = int()
-# for index, block in enumerate(main_stats):
-#     if index == len(main_stats) - 1:
-#         break
-#     if len(block.contents) == 2:
-#         value = block.contents[0].getText()
-#         key = block.contents[1].getText()
-#         info[key] = value
-#     elif len(block.contents) == 1:
-#         sub_b = block.contents[0]
-#         sqft = sub_b.contents[0].getText()
-#         per_sqft = re.findall(r"\d+", sub_b.contents[3].getText())
-#         info["sqft"] = sqft
-#         info["per_sqft"] = per_sqft
+# values = ["$4,868,000", "5,774 Sq. Ft.", "$843 / Sq. Ft.", "5.5"]
+# regex = re.compile(r"[\d\(,.)*\d]+")
+# for value in values:
+#     res = regex.findall(value)[0]
+#     res = re.sub(",", "", res)
+#     print(res)
 
-# stats_section = bot_stats.contents[1]
-# more_info = bot_stats.contents[0].contents[0]
-# stats = stats_section.find("span", {"class": "value"}).getText()
-# info["stats"] = stats
-# for i in range(1, len(more_info.contents)):
-#     key = more_info.contents[i].find("span", {"class": "label"}).getText()
-#     value = more_info.contents[i].find("span", {"class": "value"}).getText()
-#     info[key] = value
 
-# print(html)
+
+# u = unit("https://www.redfin.com/WA/Woodinville/15050-127th-Pl-NE-98072/home/143458227")
+# u.fetch_data()
+# print(u.info)

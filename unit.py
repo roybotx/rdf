@@ -1,12 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
-import constants
 import re
-from models.home import Home
-from db_controls.db_controls import Home_db_control
 from datetime import datetime
 import time
+from my_logger import logger
 
 
 class unit(object):
@@ -14,7 +12,7 @@ class unit(object):
         self.html = self.make_call(url)
         self.info = {"link": url}
         self.need_to_check = True
-        print("Just fetched the data from {}. sleeping for 5 seconds".format(url))
+        logger.info("Just fetched the data from {}. sleeping for 5 seconds".format(url))
         time.sleep(5)
 
     def make_call(self, url):
@@ -24,95 +22,71 @@ class unit(object):
         return BeautifulSoup(resp.text, "lxml")
 
     def fetch_data(self):
-        if "NOT FOR SALE" in str(self.html.contents):
-            print("not for sale")
+        if "NOT FOR SALE" in str(self.html.contents): 
+            logger.warning("NOT FOR SALE")
             self.need_to_check = False
             return
-        self.fetch_main_content()
-        self.fetch_key_info()
-        self.fetch_basic_info()
+        elif "READY TO BUILD" in str(self.html.contents):
+            logger.warning("NOT FOR SALE - READY TO BUILD")
+            self.need_to_check = False
+            return
+        # self.fetch_main_content()
+        self.__fetch_key_info()
+        self.__fetch_basic_info()
+        self.__postprocess_values()
 
-    # def fetch_basic_info(self):
-    #     home_info = {}
-    #     basic_info_div = self.html.find("div", {"class": "HomeInfo inline-block"})
-    #     stats_and_built = basic_info_div.find("div", {"class": "HomeBottomStats"})
-    #     stats = stats_and_built.find(text = "Status: ").parent.nextSibling.getText()
-    #     home_info["stats"] = stats
-    #     built = stats_and_built.find(text = "Built: ").parent.nextSibling.getText()
-    #     home_info["built"] = built
-    #     basic_info = basic_info_div.find("div", {"class": "top-stats"})
-    #     addr = basic_info.next.getText()
-    #     home_info["address"] = addr
-    #     state_and_zipcode = addr.split(", ")[1].split(" ")
-    #     self.info["state"] = state_and_zipcode[0]
-    #     self.info["zipcode"] = state_and_zipcode[1]
-    #     regex = re.compile('.*HomeMainStats.*')
-    #     for div in basic_info.find("div", {"class": regex}):
-    #         if div.name == "div":
-    #             if "sqft" not in div.attrs.get("class"):
-    #                 key = div.contents[1].getText()
-    #                 value = div.contents[0].getText()
-    #                 if key in ["Redfin Estimate", "Last Sold Price", "Beds", "Bath"]:
-    #                     if key in ["Redfin Estimate", "Last Sold Price"]:
-    #                         value = value.replace(",", "").replace("$", "")
-    #                     home_info[unit.preprocess_field(key)] = value
-    #                 else:
-    #                     home_info[unit.preprocess_field(value)] = key
-    #             else:
-    #                 total = re.findall(r"\d+", div.getText())
-    #                 home_info["sqft"] = total[0]
-    #                 home_info["per_sqft"] = total[1]
-    #     self.info.update(home_info)
+    def __fetch_basic_info(self):
+        try:
+            section = self.html.find("div", {"class": "HomeInfo inline-block"})
+            top_stats = section.contents[0]
+            bot_stats = section.contents[1]
+            address = top_stats.contents[0].getText()
+            addr_info = address.split(", ")
+            self.info["address"] = addr_info[0]
+            self.info["state"] = addr_info[1].split(" ")[0]
+            self.info["zipcode"] = addr_info[1].split(" ")[1]
+            main_stats = top_stats.contents[1]
+            sqft = int()
+            per_sqft = int()
+            for index, block in enumerate(main_stats):
+                if index == len(main_stats) - 1:
+                    break
+                if len(block.contents) == 2:
+                    value = block.contents[0].getText()
+                    key = self.__preprocess_field(block.contents[1].getText())
+                    self.info[key] = value
+                elif len(block.contents) == 1:
+                    sub_b = block.contents[0]
+                    sqft = sub_b.contents[0].getText()
+                    per_sqft = sub_b.contents[3].getText()
+                    self.info["sqft"] = sqft
+                    self.info["per_sqft"] = per_sqft
 
-    def fetch_basic_info(self):
-        section = self.html.find("div", {"class": "HomeInfo inline-block"})
-        top_stats = section.contents[0]
-        bot_stats = section.contents[1]
-        address = top_stats.contents[0].getText()
-        self.info["address"] = address
-        main_stats = top_stats.contents[1]
-        sqft = int()
-        per_sqft = int()
-        for index, block in enumerate(main_stats):
-            if index == len(main_stats) - 1:
-                break
-            if len(block.contents) == 2:
-                value = block.contents[0].getText().replace("$", "").replace(",", "")
-                key = unit.preprocess_field(block.contents[1].getText())
+            stats_section = bot_stats.contents[1]
+            more_info = bot_stats.contents[0].contents[0]
+            stats = stats_section.find("span", {"class": "value"}).getText()
+            self.info["stats"] = stats
+            for i in range(1, len(more_info.contents)):
+                key = more_info.contents[i].find("span", {"class": "label"}).getText()
+                key = self.__preprocess_field(key)
+                value = more_info.contents[i].find("span", {"class": "value"}).getText()
                 self.info[key] = value
-            elif len(block.contents) == 1:
-                sub_b = block.contents[0]
-                sqft = sub_b.contents[0].getText().replace("$", "").replace(",", "")
-                per_sqft = re.findall(r"\d+", sub_b.contents[3].getText())[0]
-                self.info["sqft"] = sqft
-                self.info["per_sqft"] = per_sqft
+        except Exception as e:
+            logger.error("Unknown error in fetch_basic_info. {}".format(str(e)))
+            return
 
-        stats_section = bot_stats.contents[1]
-        more_info = bot_stats.contents[0].contents[0]
-        stats = stats_section.find("span", {"class": "value"}).getText()
-        self.info["stats"] = stats
-        for i in range(1, len(more_info.contents)):
-            key = more_info.contents[i].find("span", {"class": "label"}).getText()
-            key = unit.preprocess_field(key)
-            value = more_info.contents[i].find("span", {"class": "value"}).getText()
-            self.info[key] = value
+    def __fetch_key_info(self):
+        try:
+            key_info_elements = self.html.find("div", {"class": "keyDetailsList"}).findAll("div", {"class": re.compile(".*keyDetail.*")})
+            for key_info_el in key_info_elements:
+                key = self.__preprocess_field(key_info_el.contents[0].getText())
+                value = key_info_el.contents[1].getText()
+                self.info[key] = value
+        except Exception as e:
+            logger.error("Unknown error in fetch_key_info(). {}".format(str(e)))
+            return
 
-    def fetch_key_info(self):
-        key_info_elements = self.html.find("div", {"class": "keyDetailsList"}).findAll("div", {"class": "keyDetail font-size-base"})
-        key_info = {}
-        for key_info_el in key_info_elements:
-            key_and_info = key_info_el.findChildren("span")
-            key = unit.preprocess_field(key_and_info[0].getText())
-            value = key_and_info[1].getText()
-            if key == "hoa_dues":
-                key_info[key] = re.findall(r"\d+", value)
-            elif key == "offer_review_date":
-                key_info[key] = datetime.strptime(value, "%A, %B %d, %Y").strftime('%Y-%m-%d %H:%M:%S')
-            else:
-                key_info[key] = value
-        self.info.update(key_info)
-
-    def fetch_main_content(self):
+    def __fetch_main_content(self):
         amenities_container_div = self.html.find("div", {"class": "amenities-container"})
         titles = amenities_container_div.findAll("div", {"class": "super-group-title"})
         contents = amenities_container_div.findAll("div", {"class": "super-group-content"})
@@ -133,12 +107,32 @@ class unit(object):
             main_content[unit.preprocess_field(title)] = main_content_details
         # self.info.update(main_content)
 
-    @staticmethod
-    def preprocess_field(prename):
+    def __preprocess_field(self, prename):
+        prename = prename.lstrip().rstrip()
+        regex = re.compile('[%s]' % re.escape("#():"))
         prename = str.lower(prename).replace(" ", "_")
-        regex = re.compile('[%s]' % re.escape("#()"))
         res = regex.sub("", prename)
+        if res == "baths":
+            res = "bath"
         return res
+
+    def __postprocess_values(self):
+        key_of_number_dict = ["sqft", "per_sqft", "bath", "beds", "price", "lot_size", "built", "redfin_estimate", "last_sold_price", "hoa_dues", "listed_at_price", "on_redfin"]
+        key_of_date_dict = ["offer_review_date"]
+        for key, value in self.info.items():
+            if key in key_of_number_dict:
+                self.info[key] = self.__process_number_value(value)
+            elif key in key_of_date_dict:
+                self.info[key] = self.__process_date_value(value)
+
+    def __process_number_value(self, value):
+        regex = re.compile("[\d(,.*)\d]+")
+        res = regex.findall(value)
+        return re.sub(",", "", res[0])
+    
+    def __process_date_value(self, value):
+        return datetime.strptime(value, "%A, %B %d, %Y").strftime('%Y-%m-%d %H:%M:%S')
+
 
 
 # u = unit(constants.TEST_URL)

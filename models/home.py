@@ -1,7 +1,6 @@
 from sqlalchemy import Column, Integer, String, Date, Float
 from sqlalchemy.ext.declarative import declarative_base
 
-
 base = declarative_base()
 metadata = base.metadata
 
@@ -9,13 +8,15 @@ metadata = base.metadata
 class Home(base):
     __tablename__ = "homes"
     id = Column(Integer, primary_key=True)
+    price = Column(Float)
+    lot_size = Column(Float)
     stats = Column(String(10))
-    built = Column(Integer)
+    built = Column(String)
     address = Column(String(200))
     redfin_estimate = Column(Float)
     last_sold_price = Column(Float)
     beds = Column(Integer)
-    bath = Column(Integer)
+    bath = Column(Float)
     sqft = Column(Integer)
     per_sqft = Column(Float)
     hoa_dues = Column(Float)
@@ -32,13 +33,13 @@ class Home(base):
     state = Column(String(4))
     link = Column(String(500), nullable=False)
     listed_at_price = Column(Float)
-    on_redfin = Column(String(50))
+    on_redfin = Column(Integer)
     valid_keys = [
-        "stats", "built", "address", "redfin_estimate",
+        "price", "lot_size", "stats", "built", "address", "redfin_estimate",
         "last_sold_price", "beds", "bath", "sqft", "per_sqft", "hoa_dues",
         "property_type", "style", "floor_number", "stories", "views",
-        "offer_review_date", "community", "county", "mls", "zipcode",
-        "state", "link", "on_redfin", "listed_at_price"
+        "offer_review_date", "community", "county", "mls", "zipcode", "state",
+        "link", "on_redfin", "listed_at_price"
     ]
 
     def __init__(self, dic):

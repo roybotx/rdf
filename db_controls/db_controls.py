@@ -3,6 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from models.home import Home
 from sqlalchemy.orm import sessionmaker
+from my_logger import logger
 
 engine = None
 Session = sessionmaker()
@@ -29,32 +30,32 @@ class Home_db_control():
                 rows = self.session.query(Home).filter(getattr(Home, attr) == value).all()
             return rows
         except SQLAlchemyError as e:
-            print(e)
+            logger.error(e)
 
     def add_unit(self, home_):
         try:
             rows = self.select_units(mls = home_.mls)
             if len(rows) != 0:
-                print("record is alread there. skipping adding...")
+                logger.info("record is alread there. skipping adding...")
                 return
-            print("adding home on mls {}".format(home_.mls))
+            logger.info("adding home on mls {}".format(home_.mls))
             self.session.add(home_)
             self.session.commit()
-            print("successfully added.")
+            logger.info("successfully added.")
         except SQLAlchemyError as e:
-            print(e)
+            logger.error(e)
 
     def add_units(self, *homes):
         errormls = str()
         try:
             for hm in homes:
-                print("adding home on mls {}".format(hm.mls))
+                logger.info("adding home on mls {}".format(hm.mls))
                 errormls = hm.mls
                 self.session.add(hm)
             self.session.commit()
-            print("successfully added {} homes.".format(len(homes)))
+            logger.info("successfully added {} homes.".format(len(homes)))
         except SQLAlchemyError as e:
-            print("error in adding home (#{}). {}".format(errormls, str(e)))
+            logger.error("error in adding home (#{}). {}".format(errormls, str(e)))
 
     def update_unit_on_mls(self, mls, **values):
         try:
@@ -66,20 +67,22 @@ class Home_db_control():
                     pass
             self.session.commit()
         except SQLAlchemyError as e:
-            print(e)
+            logger.error(e)
 
     def delete_unit_on_mls(self, mls):
         try:
             row = self.session.query(Home).filter(Home.mls == mls)
-            print("going to delete %s" % row)
+            logger.info("going to delete %s" % row)
             row.delete()
             self.session.commit()
-            print("successfully deleted.")
+            logger.info("successfully deleted.")
         except SQLAlchemyError as e:
-            print(e)
+            logger.error(e)
 
     def close_engine(self):
         global engine
-        self.session.bind.dispose()
-        self.session.dispose()
-        engine.dispose()
+        try:
+            self.session.bind.dispose()
+            engine.dispose()
+        except Exception as e:
+            logger.error("Unknown error while closing database related. {}".format(str(e)))

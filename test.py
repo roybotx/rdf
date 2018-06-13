@@ -3,11 +3,12 @@ from constants import BASE_URL
 import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
-from unit import unit
 from models.home import Home
-from db_controls.db_controls import Home_db_control
+from db_controls.db_controls import (Home_db_control, Link_db_control)
 import time
 from my_logger import logger
+from operations.home_operation import home_operation
+from operations.link_operation import link_operation
 
 zipcodes = []
 
@@ -22,9 +23,6 @@ def get_zipcode_set():
     cur.close()
     db.close()
     return zipcodes
-
-
-# codes = get_zipcode_set()
 
 
 def fetch_links(zipcode):
@@ -69,24 +67,36 @@ def get_links():
     db.close()
     return links
 
-    
-links = get_links()
-logger.info("{} links in total".format(len(links)))
-units = []
-hm_db = Home_db_control("housing")
-for idx, link in enumerate(links):
-    if idx > 100:
-        break
+def testmethod_test_get_homes(): 
+    links = get_links()
+    logger.info("{} links in total".format(len(links)))
+    hm_db = Home_db_control("housing")
+    for link in links:
+        try:
+            u = home_operation(BASE_URL + link)
+            u.fetch_data()
+            if u.need_to_check:
+                hm_db.add_unit(Home(u.info))   
+        except Exception as e:
+            logger.error("error in {}.\n{}".format(link, str(e)))
+    hm_db.close_engine()
+
+def testmethod_test_get_links():
     try:
-        u = unit(BASE_URL + link)
-        u.fetch_data()
-        if u.need_to_check:
-            hm_db.add_unit(Home(u.info))   
+        codes = get_zipcode_set()
+        lc = Link_db_control("housing")
+        for zipcode in codes:
+            lo = link_operation(zipcode)
+            links = lo.fetch_all_pages()
+            if links is not None and len(links) > 0:
+                lc.add_links(links)
+        lc.close_engine()
     except Exception as e:
-        logger.error("error in {}.\n{}".format(link, str(e)))
-hm_db.close_engine()
+        logger.error("err in testmethod_test_get_links().{}".format(str(e)))
+    
 
-
+testmethod_test_get_links()
+testmethod_test_get_homes() 
 
 #   $4,868,000  5,774 Sq. Ft.   $843 / Sq. Ft.      5.5
 # import re

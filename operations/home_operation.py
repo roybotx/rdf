@@ -7,13 +7,13 @@ import time
 from my_logger import logger
 
 
-class unit(object):
+class home_operation(object):
     def __init__(self, url):
         self.html = self.make_call(url)
         self.info = {"link": url}
         self.need_to_check = True
-        logger.info("Just fetched the data from {}. sleeping for 5 seconds".format(url))
-        time.sleep(5)
+        logger.info("Just fetched the data from {}. sleeping for 20 seconds".format(url))
+        time.sleep(30)
 
     def make_call(self, url):
         user_agent = UserAgent()
@@ -101,10 +101,10 @@ class unit(object):
                 h4_details = h4.findNextSiblings("li")
                 for detail in h4_details:
                     if h4.getText() not in main_content_details.keys():
-                        main_content_details[unit.preprocess_field(h4.getText())] = [detail.getText()]
+                        main_content_details[self.__preprocess_field(h4.getText())] = [detail.getText()]
                     else:
-                        main_content_details[unit.preprocess_field(h4.getText())].append(detail.getText())
-            main_content[unit.preprocess_field(title)] = main_content_details
+                        main_content_details[self.__preprocess_field(h4.getText())].append(detail.getText())
+            main_content[self.__preprocess_field(title)] = main_content_details
         # self.info.update(main_content)
 
     def __preprocess_field(self, prename):

@@ -5,7 +5,7 @@ import time
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(name)-12s %(levelname)-8s %(message)s',
                     datefmt='%m-%d %H:%M',
-                    filename="log{}.log".format(time.strftime("%Y%m%d-%H%M%S")),
+                    filename="logs\log{}.log".format(time.strftime("%Y%m%d-%H%M%S")),
                     filemode='w')
 # define a Handler which writes INFO messages or higher to the sys.stderr
 console = logging.StreamHandler()

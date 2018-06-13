@@ -2,7 +2,6 @@ from sqlalchemy import Column, Integer, String, Date, Float
 from sqlalchemy.ext.declarative import declarative_base
 
 base = declarative_base()
-metadata = base.metadata
 
 
 class Home(base):
@@ -34,6 +33,7 @@ class Home(base):
     link = Column(String(500), nullable=False)
     listed_at_price = Column(Float)
     on_redfin = Column(Integer)
+    
     valid_keys = [
         "price", "lot_size", "stats", "built", "address", "redfin_estimate",
         "last_sold_price", "beds", "bath", "sqft", "per_sqft", "hoa_dues",

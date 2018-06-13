@@ -9,26 +9,6 @@ import utils
 def get_links_by_zipcode(zipcode):
     url = "https://www.redfin.com/zipcode/" + str(zipcode)
     print("Fetching links from zipcode %s..." % zipcode)
-    user_agent = UserAgent()        
-    headers = {"user-agent": user_agent.random}
-    resp = requests.get(url, headers = headers)
-    html = BeautifulSoup(resp.text, "lxml") 
-    house_links = []
-    house_links.extend([link.attrs.get("href") for link in html.findAll("a", {"class": "cover-all"})])  
-    utils.SLEEP_FOR_15_SEC()
-
-    pagination_str = html.find("div", {"class": "viewingPage"}).getText()
-    pagination = int(pagination_str[len("Viewing page 1 of "): -len("(Download All)")])
-    urls = [("%s/page-%d") % (url, i + 1)for i in range(1, pagination)]
-
-    for u in urls:
-        html = BeautifulSoup(requests.get(u, headers = headers).text, "lxml")
-        utils.SLEEP_FOR_15_SEC()
-        house_links.extend([link.attrs.get("href") for link in html.findAll("a", {"class": "cover-all"})])
-
-    house_links_set = set(house_links)
-    print("Done with %s. %d links added." % (url, len(house_links_set)))
-    return house_links_set
 
 
 def get_links_by_zipcodes(zipcodes):

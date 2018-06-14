@@ -16,7 +16,6 @@ class home_operation(object):
         self.need_to_check = True
         self.logger = logging.getLogger("home_operation")
         self.logger.info("Just fetched the data from {}.".format(url))
-        # time.sleep(30)
 
     def __make_call(self, url):
         headers = {"user-agent": UA.random}

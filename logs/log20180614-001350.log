@@ -251,3 +251,665 @@ Trying 3 more time(s)...
 06-14 00:45 Link_db_control INFO     Total link amount is 44. 0 links are already in the database:
 06-14 00:45 link_operation INFO     3 pages in total to fetch.
 06-14 00:45 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98126
+06-14 00:45 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98126/page-2
+06-14 00:45 link_operation INFO     Got 18 links on page https://www.redfin.com/zipcode/98126/page-3
+06-14 00:45 Link_db_control INFO     Total link amount is 58. 0 links are already in the database:
+06-14 00:45 link_operation INFO     1 pages in total to fetch.
+06-14 00:45 link_operation INFO     Got 4 links on page https://www.redfin.com/zipcode/98131
+06-14 00:45 Link_db_control INFO     Total link amount is 4. 0 links are already in the database:
+06-14 00:46 link_operation INFO     1 pages in total to fetch.
+06-14 00:46 link_operation INFO     Got 4 links on page https://www.redfin.com/zipcode/98132
+06-14 00:46 Link_db_control INFO     Total link amount is 4. 4 links are already in the database:
+06-14 00:46 Link_db_control INFO     ['/WA/SeaTac/3231-S-150th-St-98188/home/193453', '/WA/SeaTac/3217-S-150th-St-98188/home/192959', '/WA/SeaTac/15232-30th-Ave-S-98188/home/193660', '/WA/Tukwila/14654-Military-Rd-S-98168/home/193287']
+06-14 00:46 link_operation INFO     3 pages in total to fetch.
+06-14 00:46 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98133
+06-14 00:46 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98133/page-2
+06-14 00:46 link_operation INFO     Got 10 links on page https://www.redfin.com/zipcode/98133/page-3
+06-14 00:46 Link_db_control INFO     Total link amount is 50. 0 links are already in the database:
+06-14 00:46 link_operation INFO     1 pages in total to fetch.
+06-14 00:46 link_operation INFO     Got 2 links on page https://www.redfin.com/zipcode/98134
+06-14 00:46 Link_db_control INFO     Total link amount is 2. 0 links are already in the database:
+06-14 00:47 link_operation INFO     2 pages in total to fetch.
+06-14 00:47 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98136
+06-14 00:47 link_operation INFO     Got 7 links on page https://www.redfin.com/zipcode/98136/page-2
+06-14 00:47 Link_db_control INFO     Total link amount is 27. 0 links are already in the database:
+06-14 00:47 link_operation INFO     4 pages in total to fetch.
+06-14 00:47 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98144
+06-14 00:48 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98144/page-2
+06-14 00:48 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98144/page-3
+06-14 00:48 link_operation INFO     Got 1 links on page https://www.redfin.com/zipcode/98144/page-4
+06-14 00:48 Link_db_control INFO     Total link amount is 61. 0 links are already in the database:
+06-14 00:48 link_operation INFO     3 pages in total to fetch.
+06-14 00:48 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98146
+06-14 00:48 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98146/page-2
+06-14 00:48 link_operation INFO     Got 4 links on page https://www.redfin.com/zipcode/98146/page-3
+06-14 00:48 Link_db_control INFO     Total link amount is 44. 0 links are already in the database:
+06-14 00:49 link_operation INFO     1 pages in total to fetch.
+06-14 00:49 link_operation INFO     Got 18 links on page https://www.redfin.com/zipcode/98148
+06-14 00:49 Link_db_control INFO     Total link amount is 18. 0 links are already in the database:
+06-14 00:49 link_operation INFO     3 pages in total to fetch.
+06-14 00:49 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98155
+06-14 00:49 link_operation INFO     Got 20 links on page https://www.redfin.com/zipcode/98155/page-2
+06-14 00:49 link_operation INFO     Got 17 links on page https://www.redfin.com/zipcode/98155/page-3
+06-14 00:49 Link_db_control INFO     Total link amount is 57. 0 links are already in the database:
+06-14 00:49 link_operation ERROR    Unknow err in __calc_total_page_num().'NoneType' object has no attribute 'getText'
+06-14 00:49 testmethod_test_get_links ERROR    err in testmethod_test_get_links().object of type 'NoneType' has no len()
+06-14 00:49 testmethod_test_get_links INFO     testmethod_test_get_links finished.
+06-14 00:49 testmethod_test_get_homes INFO     4106 links in total
+06-14 00:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Yarrow-Point/9262-Points-Dr-NE-98004/home/249572.
+06-14 00:50 Home_db_control INFO     adding home on mls 1300339
+06-14 00:50 Home_db_control INFO     successfully added.
+06-14 00:50 testmethod_test_get_homes ERROR    error in /WA/Yarrow-Point/9150-NE-32nd-St-98004/home/252234.
+'home_operation' object has no attribute 'logger'
+06-14 00:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Yarrow-Point/4427-91st-Ave-NE-98004/home/250202.
+06-14 00:50 Home_db_control INFO     adding home on mls 1282458
+06-14 00:50 Home_db_control INFO     successfully added.
+06-14 00:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Yarrow-Point/4233-94th-Ave-NE-98004/home/249820.
+06-14 00:50 Home_db_control INFO     adding home on mls 1278223
+06-14 00:50 Home_db_control INFO     successfully added.
+06-14 00:51 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Yarrow-Point/3833-94th-Ave-NE-98004/home/250042.
+06-14 00:51 Home_db_control INFO     adding home on mls 1252170
+06-14 00:51 Home_db_control INFO     successfully added.
+06-14 00:51 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Yarrow-Point/3812-94th-Ave-NE-98004/home/250287.
+06-14 00:51 Home_db_control INFO     adding home on mls 1283050
+06-14 00:51 Home_db_control INFO     successfully added.
+06-14 00:51 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Vinterra/Melbourne-4710/home/129653047.
+06-14 00:51 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:51 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra/Lexington-3829/home/143807837.
+'home_operation' object has no attribute 'logger'
+06-14 00:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Vinterra/Jefferson-5430/home/129653039.
+06-14 00:52 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Vinterra/Caslon-4723/home/144053617.
+06-14 00:52 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Vinterra/Cambridge-3724/home/129653058.
+06-14 00:52 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Vinterra/Brighton-3831/home/144053618.
+06-14 00:52 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:53 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra/Ashland-3726/home/129653066.
+'home_operation' object has no attribute 'logger'
+06-14 00:53 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra-Highlands/Whatcom-C723/home/144969864.
+'home_operation' object has no attribute 'logger'
+06-14 00:53 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra-Highlands/Vancouver-C430/home/144824756.
+'home_operation' object has no attribute 'logger'
+06-14 00:53 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra-Highlands/Sammamish-Ct12/home/144969866.
+'home_operation' object has no attribute 'logger'
+06-14 00:53 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra-Highlands/Roosevelt-Ct11/home/144942199.
+'home_operation' object has no attribute 'logger'
+06-14 00:54 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Vinterra-Highlands/Cushman-Cb41/home/144824757.
+06-14 00:54 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:54 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Vinterra-Highlands/Crescent-Cb40/home/144969867.
+'home_operation' object has no attribute 'logger'
+06-14 00:54 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Autumn-Grove/AG-3517B/home/145934203.
+06-14 00:54 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:54 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Autumn-Grove/AG-3517A/home/145934204.
+06-14 00:54 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:55 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Autumn-Grove/AG-3489/home/145934205.
+'home_operation' object has no attribute 'logger'
+06-14 00:55 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Autumn-Grove/AG-3402B/home/145934206.
+06-14 00:55 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:55 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/Autumn-Grove/AG-3402A/home/145934207.
+06-14 00:55 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:55 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Autumn-Grove/AG-3200B/home/145934208.
+'home_operation' object has no attribute 'logger'
+06-14 00:56 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Autumn-Grove/AG-3200A/home/145934209.
+'home_operation' object has no attribute 'logger'
+06-14 00:56 testmethod_test_get_homes ERROR    error in /WA/Woodinville/Autumn-Grove/AG-3029/home/145934210.
+'home_operation' object has no attribute 'logger'
+06-14 00:56 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/4929-215th-St-SE-98072/home/2812587.
+06-14 00:56 Home_db_control INFO     adding home on mls 1293196
+06-14 00:56 Home_db_control INFO     successfully added.
+06-14 00:57 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/24202-85th-Ave-SE-98072/home/2639594.
+06-14 00:57 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:57 testmethod_test_get_homes ERROR    error in /WA/Woodinville/23825-51st-Ave-SE-98072/home/2633709.
+'home_operation' object has no attribute 'logger'
+06-14 00:57 Proxy        INFO     182.76.113.206:8080 is not available anymore, moving to next. timed out
+06-14 00:58 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/23810-75th-Ave-SE-98072/home/2759830.
+06-14 00:58 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:58 testmethod_test_get_homes ERROR    error in /WA/Woodinville/23110-75th-Ave-SE-98072/home/2636132.
+'home_operation' object has no attribute 'logger'
+06-14 00:58 Proxy        INFO     182.76.113.206:8080 is not available anymore, moving to next. timed out
+06-14 00:58 testmethod_test_get_homes ERROR    error in /WA/Woodinville/23107-NE-162nd-St-98077/home/12299774.
+'home_operation' object has no attribute 'logger'
+06-14 00:59 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/22303-NE-157th-St-98077/home/273582.
+06-14 00:59 Home_db_control INFO     adding home on mls 1300563
+06-14 00:59 Home_db_control INFO     successfully added.
+06-14 00:59 testmethod_test_get_homes ERROR    error in /WA/Woodinville/21708-82nd-Ave-SE-98072/home/11881713.
+'home_operation' object has no attribute 'logger'
+06-14 00:59 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/21629-82nd-Ave-SE-98072/home/11881711.
+06-14 00:59 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 00:59 testmethod_test_get_homes ERROR    error in /WA/Woodinville/21116-NE-129th-Ct-98077/home/2079146.
+'home_operation' object has no attribute 'logger'
+06-14 00:59 testmethod_test_get_homes ERROR    error in /WA/Woodinville/21104-NE-130th-Ct-98077/home/2070519.
+'home_operation' object has no attribute 'logger'
+06-14 01:00 testmethod_test_get_homes ERROR    error in /WA/Woodinville/20324-Little-Bear-Creek-Rd-98072/home/2572134.
+'home_operation' object has no attribute 'logger'
+06-14 01:00 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/20020-NE-196th-St-98077/home/274262.
+06-14 01:00 Home_db_control INFO     adding home on mls 1307175
+06-14 01:00 Home_db_control INFO     successfully added.
+06-14 01:00 testmethod_test_get_homes ERROR    error in /WA/Woodinville/19731-NE-156th-Pl-98077/home/270486.
+'home_operation' object has no attribute 'logger'
+06-14 01:01 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/19544-158th-Pl-NE-98072/home/271649.
+06-14 01:01 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:01 testmethod_test_get_homes ERROR    error in /WA/Woodinville/19425-NE-181st-St-98077/home/273919.
+'home_operation' object has no attribute 'logger'
+06-14 01:01 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/19360-163rd-Ct-NE-98072/home/2096906.
+06-14 01:01 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:02 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/19209-NE-165th-St-98077/home/270284.
+06-14 01:02 Home_db_control INFO     adding home on mls 1302482
+06-14 01:02 Home_db_control INFO     successfully added.
+06-14 01:02 Proxy        INFO     145.249.106.107:8118 is not available anymore, moving to next. timed out
+06-14 01:02 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/19011-226th-Ave-NE-98077/home/273370.
+06-14 01:02 Home_db_control INFO     adding home on mls 1181223
+06-14 01:02 Home_db_control INFO     successfully added.
+06-14 01:02 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17843-NE-205th-St-98072/home/271624.
+06-14 01:02 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:03 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17710-159th-Ave-NE-98072/home/449040.
+06-14 01:03 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:03 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17230-185th-Ave-NE-98072/home/271327.
+06-14 01:03 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:03 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17216-195th-Pl-NE-98077/home/273092.
+06-14 01:03 Home_db_control INFO     adding home on mls 1283246
+06-14 01:03 Home_db_control INFO     successfully added.
+06-14 01:03 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17201-127th-Pl-NE-98072/unit-102/home/50417.
+06-14 01:03 Home_db_control INFO     adding home on mls 1295209
+06-14 01:03 Home_db_control INFO     successfully added.
+06-14 01:03 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17142-217th-Pl-NE-98077/home/272214.
+06-14 01:03 Home_db_control INFO     adding home on mls 1298166
+06-14 01:03 Home_db_control INFO     successfully added.
+06-14 01:03 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17006-172nd-Pl-NE-98072/home/448060.
+06-14 01:03 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:04 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/17002-NE-172nd-Pl-98072/home/449228.
+06-14 01:04 Home_db_control INFO     adding home on mls 1146756
+06-14 01:04 Home_db_control INFO     successfully added.
+06-14 01:04 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/16804-198th-Ave-NE-98077/home/272369.
+06-14 01:04 Home_db_control INFO     adding home on mls 1300297
+06-14 01:04 Home_db_control INFO     successfully added.
+06-14 01:04 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/16706-NE-179th-St-98072/home/449336.
+06-14 01:04 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:04 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/16511-NE-172nd-Pl-98072/home/448304.
+06-14 01:04 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:04 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/16221-198th-Ave-NE-98077/home/270391.
+06-14 01:04 Home_db_control INFO     adding home on mls 1302544
+06-14 01:04 Home_db_control INFO     successfully added.
+06-14 01:04 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15825-NE-164th-St-98072/home/2075609.
+06-14 01:04 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:05 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15720-232nd-Ave-NE-98077/home/273617.
+06-14 01:05 Home_db_control INFO     adding home on mls 1293564
+06-14 01:05 Home_db_control INFO     successfully added.
+06-14 01:05 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15520-129th-Ave-NE-98072/home/454631.
+06-14 01:05 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:05 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15503-186th-Ave-NE-98072/home/269845.
+06-14 01:05 Home_db_control INFO     adding home on mls 1300516
+06-14 01:05 Home_db_control INFO     successfully added.
+06-14 01:05 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15403-NE-144th-Pl-98072/home/448654.
+06-14 01:05 Home_db_control INFO     adding home on mls 1304448
+06-14 01:05 Home_db_control INFO     successfully added.
+06-14 01:05 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15374-127th-Pl-NE-98072/unit-52/home/145593378.
+06-14 01:05 Home_db_control INFO     adding home on mls 1289330
+06-14 01:05 Home_db_control INFO     successfully added.
+06-14 01:05 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15315-127th-Pl-NE-98072/unit-54/home/145900391.
+06-14 01:05 Home_db_control INFO     adding home on mls 1302425
+06-14 01:05 Home_db_control INFO     successfully added.
+06-14 01:06 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15156-127th-Pl-NE-98072/unit-43/home/144912256.
+06-14 01:06 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:06 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15151-127th-Pl-NE-98072/unit-62/home/145129701.
+06-14 01:06 Home_db_control INFO     adding home on mls 1258692
+06-14 01:06 Home_db_control INFO     successfully added.
+06-14 01:06 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15151-127th-Pl-NE-98072/home/143458250.
+06-14 01:06 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:06 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15147-127th-Pl-NE-98072/unit-64/home/145129700.
+06-14 01:06 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:06 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15135-127th-Ave-NE-98072/unit-84/home/145962902.
+06-14 01:06 Home_db_control INFO     adding home on mls 1304426
+06-14 01:06 Home_db_control INFO     successfully added.
+06-14 01:06 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15132-126th-Ave-NE-98072/unit-93/home/145580003.
+06-14 01:06 Home_db_control INFO     adding home on mls 1287456
+06-14 01:06 Home_db_control INFO     successfully added.
+06-14 01:07 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15131-127th-Ave-NE-98072/unit-86/home/145233068.
+06-14 01:07 Home_db_control INFO     adding home on mls 1263750
+06-14 01:07 Home_db_control INFO     successfully added.
+06-14 01:07 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15130-126th-Ave-NE-98072/unit-92/home/145178773.
+06-14 01:07 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:07 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15127-NE-177th-Dr-98072/home/448014.
+06-14 01:07 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:07 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15119-126th-Ave-NE-98072/unit-99/home/145866563.
+06-14 01:07 Home_db_control INFO     adding home on mls 1300335
+06-14 01:07 Home_db_control INFO     successfully added.
+06-14 01:07 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15114-125th-Pl-NE-98072/unit-105/home/145090176.
+06-14 01:07 Home_db_control INFO     adding home on mls 1255039
+06-14 01:07 Home_db_control INFO     successfully added.
+06-14 01:07 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15072-225th-Ave-NE-98077/home/272509.
+06-14 01:07 Home_db_control INFO     adding home on mls 1307341
+06-14 01:07 Home_db_control INFO     successfully added.
+06-14 01:08 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15050-127th-Pl-NE-98072/home/143458227.
+06-14 01:08 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:08 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15026-126th-Ave-NE-98072/unit-90/home/145866098.
+06-14 01:08 Home_db_control INFO     adding home on mls 1300296
+06-14 01:08 Home_db_control INFO     successfully added.
+06-14 01:08 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15015-159th-Ave-NE-98072/home/449373.
+06-14 01:08 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:08 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15003-125th-Pl-NE-98072/unit-114/home/145338008.
+06-14 01:08 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:08 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/15003-124th-Pl-NE-98072/unit-6/home/145350441.
+06-14 01:08 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:08 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14725-232nd-Ave-NE-98077/home/272132.
+06-14 01:08 Home_db_control INFO     adding home on mls 1292921
+06-14 01:08 Home_db_control INFO     successfully added.
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14724-219th-Ave-NE-98077/home/272197.
+06-14 01:09 Home_db_control INFO     adding home on mls 1275335
+06-14 01:09 Home_db_control INFO     successfully added.
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/147-223rd-Ave-NE-98077/home/145605237.
+06-14 01:09 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:09 testmethod_test_get_homes ERROR    error in /WA/Woodinville/147-223rd-Ave-NE-98077/home/145605237.
+list index out of range
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14628-Bear-Creek-Rd-NE-98077/home/11902519.
+06-14 01:09 Home_db_control INFO     adding home on mls 1306684
+06-14 01:09 Home_db_control INFO     successfully added.
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14460-188th-Ave-NE-98072/home/449534.
+06-14 01:09 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:09 testmethod_test_get_homes ERROR    error in /WA/Woodinville/14460-188th-Ave-NE-98072/home/449534.
+list index out of range
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14340-160th-Pl-NE-98072/home/448889.
+06-14 01:09 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:09 testmethod_test_get_homes ERROR    error in /WA/Woodinville/14340-160th-Pl-NE-98072/home/448889.
+list index out of range
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14328-160th-Pl-NE-98072/home/22229132.
+06-14 01:09 Home_db_control INFO     adding home on mls 1281711
+06-14 01:09 Home_db_control INFO     successfully added.
+06-14 01:09 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14320-186th-Pl-NE-98072/home/12314743.
+06-14 01:09 Home_db_control INFO     adding home on mls 1286365
+06-14 01:09 Home_db_control INFO     successfully added.
+06-14 01:10 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14232-214th-Way-NE-98077/home/452519.
+06-14 01:10 Home_db_control INFO     adding home on mls 1297198
+06-14 01:10 Home_db_control INFO     successfully added.
+06-14 01:10 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14206-NE-181st-Pl-98072/unit-L301/home/2077807.
+06-14 01:10 Home_db_control INFO     adding home on mls 1298696
+06-14 01:10 Home_db_control INFO     successfully added.
+06-14 01:10 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14129-209th-Ave-NE-98077/home/452232.
+06-14 01:10 Home_db_control INFO     adding home on mls 1305240
+06-14 01:10 Home_db_control INFO     successfully added.
+06-14 01:10 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/14122-205th-Ave-NE-98077/home/452356.
+06-14 01:10 Home_db_control INFO     adding home on mls 1280569
+06-14 01:10 Home_db_control INFO     successfully added.
+06-14 01:10 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/13849-209th-Ave-NE-98077/home/452252.
+06-14 01:10 Home_db_control INFO     adding home on mls 1307632
+06-14 01:10 Home_db_control INFO     successfully added.
+06-14 01:10 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/13824-196th-Ave-NE-98077/home/452157.
+06-14 01:10 Home_db_control INFO     adding home on mls 1285099
+06-14 01:10 Home_db_control INFO     successfully added.
+06-14 01:11 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/13611-NE-145th-St-98072/home/513084.
+06-14 01:11 Home_db_control INFO     adding home on mls 1260417
+06-14 01:11 Home_db_control INFO     successfully added.
+06-14 01:11 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/13321-Avondale-Rd-NE-98072/home/22510186.
+06-14 01:11 Home_db_control INFO     adding home on mls 1290722
+06-14 01:11 Home_db_control INFO     successfully added.
+06-14 01:11 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/12727-NE-172nd-Ln-98072/home/44590.
+06-14 01:11 Home_db_control INFO     adding home on mls 1306964
+06-14 01:11 Home_db_control INFO     successfully added.
+06-14 01:11 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/12725-NE-150th-Ct-98072/home/143458216.
+06-14 01:11 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:11 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/12432-NE-153rd-Pl-98072/unit-137/home/145994906.
+06-14 01:11 Home_db_control INFO     adding home on mls 1306317
+06-14 01:11 Home_db_control INFO     successfully added.
+06-14 01:11 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Woodinville/12426-NE-153rd-Pl-98072/unit-138/home/145090310.
+06-14 01:11 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/SW-Cove-Rd-98070/home/144767954.
+06-14 01:12 Home_db_control INFO     adding home on mls 1237999
+06-14 01:12 Home_db_control INFO     successfully added.
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/9630-SW-Quartermaster-Dr-98070/home/523479.
+06-14 01:12 Home_db_control INFO     adding home on mls 1297917
+06-14 01:12 Home_db_control INFO     successfully added.
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/9534-SW-Gorsuch-Rd-98070/home/2076716.
+06-14 01:12 Home_db_control INFO     adding home on mls 1291257
+06-14 01:12 Home_db_control INFO     successfully added.
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/8934-SW-146th-Pl-98070/home/521791.
+06-14 01:12 Home_db_control INFO     adding home on mls 1260224
+06-14 01:12 Home_db_control INFO     successfully added.
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/8436-SW-Soper-Rd-98070/home/522163.
+06-14 01:12 Home_db_control INFO     adding home on mls 1291327
+06-14 01:12 Home_db_control INFO     successfully added.
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/8415-SW-Soper-Rd-98070/home/522165.
+06-14 01:12 Home_db_control INFO     adding home on mls 1135677
+06-14 01:12 Home_db_control INFO     successfully added.
+06-14 01:12 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/8044-SW-Klahanie-Rd-98070/home/521656.
+06-14 01:12 Home_db_control INFO     adding home on mls 1304176
+06-14 01:13 Home_db_control INFO     successfully added.
+06-14 01:13 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/80-SW-Hawthorne-Ln-98070/home/145985726.
+06-14 01:13 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:13 testmethod_test_get_homes ERROR    error in /WA/Vashon/80-SW-Hawthorne-Ln-98070/home/145985726.
+list index out of range
+06-14 01:13 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/7332-SW-Maury-Park-Rd-98070/home/524408.
+06-14 01:13 Home_db_control INFO     adding home on mls 1278388
+06-14 01:13 Home_db_control INFO     successfully added.
+06-14 01:13 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/72-SW-Maury-Park-Rd-98070/home/145542767.
+06-14 01:13 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:13 testmethod_test_get_homes ERROR    error in /WA/Vashon/72-SW-Maury-Park-Rd-98070/home/145542767.
+list index out of range
+06-14 01:13 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/6728-SW-Maury-Park-Rd-98070/home/524290.
+06-14 01:13 Home_db_control INFO     adding home on mls 1308964
+06-14 01:13 Home_db_control INFO     successfully added.
+06-14 01:13 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/4725-SW-244th-St-98070/home/524276.
+06-14 01:13 Home_db_control INFO     adding home on mls 1274249
+06-14 01:13 Home_db_control INFO     successfully added.
+06-14 01:14 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/301-131st-Ave-SW-98070/home/129205675.
+06-14 01:14 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:14 testmethod_test_get_homes ERROR    error in /WA/Vashon/301-131st-Ave-SW-98070/home/129205675.
+list index out of range
+06-14 01:14 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/29821-131st-Ave-SW-98070/home/523053.
+06-14 01:14 Home_db_control INFO     adding home on mls 1292943
+06-14 01:14 Home_db_control INFO     successfully added.
+06-14 01:14 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/28604-97th-Ave-SW-98070/home/2082014.
+06-14 01:14 Home_db_control INFO     adding home on mls 1251407
+06-14 01:14 Home_db_control INFO     successfully added.
+06-14 01:15 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/285-143rd-Ave-SW-98070/home/104490568.
+06-14 01:15 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:15 testmethod_test_get_homes ERROR    error in /WA/Vashon/285-143rd-Ave-SW-98070/home/104490568.
+list index out of range
+06-14 01:15 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/27571-Sandy-Shores-Dr-SW-98070/home/524080.
+06-14 01:15 Home_db_control INFO     adding home on mls 1267210
+06-14 01:15 Home_db_control INFO     successfully added.
+06-14 01:15 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/275-Sandy-Shores-Dr-SW-98070/home/113963102.
+06-14 01:15 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:15 testmethod_test_get_homes ERROR    error in /WA/Vashon/275-Sandy-Shores-Dr-SW-98070/home/113963102.
+list index out of range
+06-14 01:17 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/27434-Sandy-Shores-Dr-SW-98070/home/524047.
+06-14 01:17 Home_db_control INFO     adding home on mls 1293088
+06-14 01:17 Home_db_control INFO     successfully added.
+06-14 01:17 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/27216-97th-Ave-SW-98070/home/523881.
+06-14 01:17 Home_db_control INFO     adding home on mls 1273541
+06-14 01:17 Home_db_control INFO     successfully added.
+06-14 01:18 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/26905-Hake-Rd-SW-98070/home/523990.
+06-14 01:18 Home_db_control INFO     adding home on mls 1301478
+06-14 01:18 Home_db_control INFO     successfully added.
+06-14 01:19 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/257XX-Wax-Orchard-Rd-SW-98070/home/144327385.
+06-14 01:19 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:19 testmethod_test_get_homes ERROR    error in /WA/Vashon/257XX-Wax-Orchard-Rd-SW-98070/home/144327385.
+list index out of range
+06-14 01:19 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/25-Gold-Beach-Dr-SW-98070/home/108990284.
+06-14 01:19 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:19 testmethod_test_get_homes ERROR    error in /WA/Vashon/25-Gold-Beach-Dr-SW-98070/home/108990284.
+list index out of range
+06-14 01:25 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/24809-Dockton-Rd-SW-98070/home/524042.
+06-14 01:25 Home_db_control INFO     adding home on mls 1242724
+06-14 01:25 Home_db_control INFO     successfully added.
+06-14 01:25 testmethod_test_get_homes ERROR    error in /WA/Vashon/24330-Wax-Orchard-Rd-SW-98070/home/145510104.
+'home_operation' object has no attribute 'logger'
+06-14 01:26 testmethod_test_get_homes ERROR    error in /WA/Vashon/24186-Vashon-Hwy-SW-98070/home/523597.
+'home_operation' object has no attribute 'logger'
+06-14 01:27 testmethod_test_get_homes ERROR    error in /WA/Vashon/241-Vashon-Hwy-SW-98070/home/143219934.
+'home_operation' object has no attribute 'logger'
+06-14 01:28 testmethod_test_get_homes ERROR    error in /WA/Vashon/23825-Dockton-Rd-SW-98070/home/523785.
+'home_operation' object has no attribute 'logger'
+06-14 01:28 testmethod_test_get_homes ERROR    error in /WA/Vashon/23722-71st-Ave-SW-98070/home/524088.
+'home_operation' object has no attribute 'logger'
+06-14 01:29 testmethod_test_get_homes ERROR    error in /WA/Vashon/23237-Kingsbury-Rd-SW-98070/home/136271283.
+'home_operation' object has no attribute 'logger'
+06-14 01:30 testmethod_test_get_homes ERROR    error in /WA/Vashon/23116-Vashon-Hwy-SW-98070/home/523339.
+'home_operation' object has no attribute 'logger'
+06-14 01:31 testmethod_test_get_homes ERROR    error in /WA/Vashon/230-Raymond-Rd-SW-98070/home/113536212.
+'home_operation' object has no attribute 'logger'
+06-14 01:31 testmethod_test_get_homes ERROR    error in /WA/Vashon/22502-100th-Pl-SW-98070/home/523233.
+'home_operation' object has no attribute 'logger'
+06-14 01:32 testmethod_test_get_homes ERROR    error in /WA/Vashon/22430-98th-Ave-SW-98070/home/523114.
+'home_operation' object has no attribute 'logger'
+06-14 01:33 testmethod_test_get_homes ERROR    error in /WA/Vashon/22314-Dugway-Rd-98070/home/2088361.
+'home_operation' object has no attribute 'logger'
+06-14 01:33 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/21210-Vashon-Hwy-SW-98070/home/22691407.
+06-14 01:33 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:33 testmethod_test_get_homes ERROR    error in /WA/Vashon/21210-Vashon-Hwy-SW-98070/home/22691407.
+list index out of range
+06-14 01:33 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/20309-81st-Ave-SW-98070/home/521766.
+06-14 01:33 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:33 testmethod_test_get_homes ERROR    error in /WA/Vashon/20309-81st-Ave-SW-98070/home/521766.
+list index out of range
+06-14 01:33 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/20030-Ridge-Rd-SW-98070/home/521712.
+06-14 01:33 Home_db_control INFO     adding home on mls 1293587
+06-14 01:33 Home_db_control INFO     successfully added.
+06-14 01:33 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/19728-Ridge-Rd-SW-98070/home/522110.
+06-14 01:33 Home_db_control INFO     adding home on mls 1295815
+06-14 01:33 Home_db_control INFO     successfully added.
+06-14 01:34 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/19223-Robinwood-Rd-SW-98070/home/522265.
+06-14 01:34 Home_db_control INFO     adding home on mls 1233498
+06-14 01:34 Home_db_control INFO     successfully added.
+06-14 01:34 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/19028-Vashon-Hwy-SW-98070/home/45488080.
+06-14 01:34 Home_db_control INFO     adding home on mls 1249091
+06-14 01:34 Home_db_control INFO     successfully added.
+06-14 01:34 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/18693-Westside-Hwy-SW-98070/home/145074877.
+06-14 01:34 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:34 testmethod_test_get_homes ERROR    error in /WA/Vashon/18693-Westside-Hwy-SW-98070/home/145074877.
+list index out of range
+06-14 01:34 testmethod_test_get_homes ERROR    error in /WA/Vashon/18527-Beall-Rd-SW-98070/home/113782685.
+'home_operation' object has no attribute 'logger'
+06-14 01:34 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/18109-Vashon-Hwy-SW-98070/home/108398704.
+06-14 01:34 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:34 testmethod_test_get_homes ERROR    error in /WA/Vashon/18109-Vashon-Hwy-SW-98070/home/108398704.
+list index out of range
+06-14 01:34 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/17526-Westside-Hwy-SW-98070/home/520566.
+06-14 01:34 Home_db_control INFO     adding home on mls 1301512
+06-14 01:34 Home_db_control INFO     successfully added.
+06-14 01:35 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/16415-Vashon-Hwy-SW-98070/home/520277.
+06-14 01:35 Home_db_control INFO     adding home on mls 1308557
+06-14 01:35 Home_db_control INFO     successfully added.
+06-14 01:35 testmethod_test_get_homes ERROR    error in /WA/Vashon/16335-Crescent-Dr-SW-98070/home/521455.
+'home_operation' object has no attribute 'logger'
+06-14 01:35 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/163-91st-Ave-SW-98070/home/113422611.
+06-14 01:35 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:35 testmethod_test_get_homes ERROR    error in /WA/Vashon/163-91st-Ave-SW-98070/home/113422611.
+list index out of range
+06-14 01:36 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/15730-Vashon-Hwy-SW-98070/home/521957.
+06-14 01:36 Home_db_control INFO     adding home on mls 1295845
+06-14 01:36 Home_db_control INFO     successfully added.
+06-14 01:36 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/14502-Glen-Acres-Rd-SW-98070/home/521876.
+06-14 01:36 Home_db_control INFO     adding home on mls 1307490
+06-14 01:36 Home_db_control INFO     successfully added.
+06-14 01:36 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/14425-Glen-Acres-Rd-SW-98070/home/22444521.
+06-14 01:36 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:36 testmethod_test_get_homes ERROR    error in /WA/Vashon/14425-Glen-Acres-Rd-SW-98070/home/22444521.
+list index out of range
+06-14 01:36 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/14325-SW-240th-St-98070/home/145543096.
+06-14 01:36 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:36 testmethod_test_get_homes ERROR    error in /WA/Vashon/14325-SW-240th-St-98070/home/145543096.
+list index out of range
+06-14 01:36 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/13916-SW-Caster-Rd-98070/home/69353273.
+06-14 01:36 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:36 testmethod_test_get_homes ERROR    error in /WA/Vashon/13916-SW-Caster-Rd-98070/home/69353273.
+list index out of range
+06-14 01:36 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/13400-SW-244th-St-98070/home/143180966.
+06-14 01:36 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:36 testmethod_test_get_homes ERROR    error in /WA/Vashon/13400-SW-244th-St-98070/home/143180966.
+list index out of range
+06-14 01:37 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/13321-SW-240th-St-98070/home/143181234.
+06-14 01:37 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:37 testmethod_test_get_homes ERROR    error in /WA/Vashon/13321-SW-240th-St-98070/home/143181234.
+list index out of range
+06-14 01:37 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/122-SW-Bachelor-Rd-98070/home/144363411.
+06-14 01:37 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:37 testmethod_test_get_homes ERROR    error in /WA/Vashon/122-SW-Bachelor-Rd-98070/home/144363411.
+list index out of range
+06-14 01:37 testmethod_test_get_homes ERROR    error in /WA/Vashon/12119-SW-Cove-Rd-98070/home/520376.
+'home_operation' object has no attribute 'logger'
+06-14 01:37 testmethod_test_get_homes ERROR    error in /WA/Vashon/11520-SW-Dolphin-Point-Rd-98070/home/522147.
+'home_operation' object has no attribute 'logger'
+06-14 01:37 testmethod_test_get_homes ERROR    error in /WA/Vashon/11322-103rd-Ave-SW-98070/home/521339.
+'home_operation' object has no attribute 'logger'
+06-14 01:37 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/111th-Ave-SW-98070/home/95953907.
+06-14 01:37 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:37 testmethod_test_get_homes ERROR    error in /WA/Vashon/111th-Ave-SW-98070/home/95953907.
+list index out of range
+06-14 01:38 testmethod_test_get_homes ERROR    error in /WA/Vashon/108-SW-280th-Ln-98070/home/144096176.
+'home_operation' object has no attribute 'logger'
+06-14 01:38 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/10770-SW-Cowan-Rd-98070/home/521364.
+06-14 01:38 Home_db_control INFO     adding home on mls 1286241
+06-14 01:38 Home_db_control INFO     successfully added.
+06-14 01:38 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/10330-SW-127th-St-98070/home/22622531.
+06-14 01:38 Home_db_control INFO     adding home on mls 1279342
+06-14 01:38 Home_db_control INFO     successfully added.
+06-14 01:38 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/10306-SW-280th-St-98070/home/35624976.
+06-14 01:38 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:38 testmethod_test_get_homes ERROR    error in /WA/Vashon/10306-SW-280th-St-98070/home/35624976.
+list index out of range
+06-14 01:39 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Vashon/1-Tacoma-Yacht-Club-Park-98070/home/145739209.
+06-14 01:39 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:39 testmethod_test_get_homes ERROR    error in /WA/Vashon/1-Tacoma-Yacht-Club-Park-98070/home/145739209.
+list index out of range
+06-14 01:39 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tukwila/14654-Military-Rd-S-98168/home/193287.
+06-14 01:39 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:39 testmethod_test_get_homes ERROR    error in /WA/Tukwila/14654-Military-Rd-S-98168/home/193287.
+list index out of range
+06-14 01:39 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3517B/home/144415476.
+06-14 01:39 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:39 testmethod_test_get_homes ERROR    error in /WA/Tacoma/Autumn-Grove/AG-3517A/home/144112575.
+'home_operation' object has no attribute 'logger'
+06-14 01:39 testmethod_test_get_homes ERROR    error in /WA/Tacoma/Autumn-Grove/AG-3489/home/144112576.
+'home_operation' object has no attribute 'logger'
+06-14 01:39 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3402B/home/144415477.
+06-14 01:39 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:39 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3402A/home/144112578.
+06-14 01:39 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:40 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3200B/home/144415478.
+06-14 01:40 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:40 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3200A/home/144112577.
+06-14 01:40 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:40 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3029/home/144109071.
+06-14 01:40 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:40 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Snoqualmie/33605-SE-99th-St-98065/home/467294.
+06-14 01:40 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:40 testmethod_test_get_homes ERROR    error in /WA/Snoqualmie/33605-SE-99th-St-98065/home/467294.
+list index out of range
+06-14 01:40 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/Belwick/The-Taylor-417/home/145508259.
+06-14 01:40 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:41 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/907-N-163rd-St-98133/unit-A32/home/73782.
+06-14 01:41 Home_db_control INFO     adding home on mls 1308701
+06-14 01:41 Home_db_control INFO     successfully added.
+06-14 01:41 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/852-NE-152nd-St-98155/home/86497.
+06-14 01:41 Home_db_control INFO     adding home on mls 1296069
+06-14 01:41 Home_db_control INFO     successfully added.
+06-14 01:41 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/766-N-161st-Pl-98133/unit-G31/home/53581.
+06-14 01:41 Home_db_control INFO     adding home on mls 1301228
+06-14 01:41 Home_db_control INFO     successfully added.
+06-14 01:41 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/514-NE-189th-St-98155/home/79972.
+06-14 01:41 testmethod_test_get_homes ERROR    error in /WA/Shoreline/514-NE-189th-St-98155/home/79972.
+list index out of range
+06-14 01:41 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/3014-NE-145th-St-98155/unit-4A/home/5162.
+06-14 01:41 Home_db_control INFO     adding home on mls 1307998
+06-14 01:41 Home_db_control INFO     successfully added.
+06-14 01:42 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/237-N-172nd-Pl-98133/home/76073.
+06-14 01:42 Home_db_control INFO     adding home on mls 1293735
+06-14 01:42 Home_db_control INFO     successfully added.
+06-14 01:42 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/2342-NE-145th-St-98155/home/86511.
+06-14 01:42 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:42 testmethod_test_get_homes ERROR    error in /WA/Shoreline/2342-NE-145th-St-98155/home/86511.
+list index out of range
+06-14 01:42 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/2322-N-185th-St-98133/unit-B/home/146035441.
+06-14 01:42 Home_db_control INFO     adding home on mls 1289711
+06-14 01:42 Home_db_control INFO     successfully added.
+06-14 01:42 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/2224-NE-168th-St-98155/home/88189.
+06-14 01:42 Home_db_control INFO     adding home on mls 1307806
+06-14 01:42 Home_db_control INFO     successfully added.
+06-14 01:42 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/2022-NE-177th-St-98155/home/22398496.
+06-14 01:42 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:42 testmethod_test_get_homes ERROR    error in /WA/Shoreline/2022-NE-177th-St-98155/home/22398496.
+list index out of range
+06-14 01:43 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/20117-Forest-Park-Dr-NE-98155/home/84692.
+06-14 01:43 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:43 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/20107-Whitman-Ave-N-98133/home/2091958.
+06-14 01:43 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:43 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/20035-Fremont-Ave-N-98133/home/78427.
+06-14 01:43 Home_db_control INFO     adding home on mls 1307416
+06-14 01:43 Home_db_control INFO     successfully added.
+06-14 01:43 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19526-23rd-Ave-NE-98155/home/91334.
+06-14 01:43 Home_db_control INFO     adding home on mls 1305032
+06-14 01:43 Home_db_control INFO     successfully added.
+06-14 01:44 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19500-Ballinger-Way-NE-98155/unit-209/home/12093529.
+06-14 01:44 Home_db_control INFO     adding home on mls 1307285
+06-14 01:44 Home_db_control INFO     successfully added.
+06-14 01:44 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19330-Linden-Ave-N-98133/home/78659.
+06-14 01:44 Home_db_control INFO     adding home on mls 1300427
+06-14 01:44 Home_db_control INFO     successfully added.
+06-14 01:44 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19321-Palatine-Ave-N-98133/home/78605.
+06-14 01:44 Home_db_control INFO     adding home on mls 1306617
+06-14 01:44 Home_db_control INFO     successfully added.
+06-14 01:45 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19216-15th-Ave-NE-98155/home/90351.
+06-14 01:45 Home_db_control INFO     adding home on mls 1305946
+06-14 01:45 Home_db_control INFO     successfully added.
+06-14 01:45 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19064-14th-Ct-NE-98155/home/12304127.
+06-14 01:45 Home_db_control INFO     adding home on mls 1284379
+06-14 01:45 Home_db_control INFO     successfully added.
+06-14 01:45 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/19020-12th-Ave-NE-98155/home/84593.
+06-14 01:45 Home_db_control INFO     adding home on mls 1286107
+06-14 01:45 Home_db_control INFO     successfully added.
+06-14 01:45 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/18810-Fremont-Ave-N-98133/home/77652.
+06-14 01:45 Home_db_control INFO     adding home on mls 1306904
+06-14 01:45 Home_db_control INFO     successfully added.
+06-14 01:46 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/18344-Stone-Ave-N-98133/unit-B/home/83199.
+06-14 01:46 Home_db_control INFO     adding home on mls 1300851
+06-14 01:46 Home_db_control INFO     successfully added.
+06-14 01:46 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/18331-12th-Ave-NE-98155/home/84614.
+06-14 01:46 Home_db_control INFO     adding home on mls 1269932
+06-14 01:46 Home_db_control INFO     successfully added.
+06-14 01:46 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/1810-N-204th-Pl-98133/home/79599.
+06-14 01:46 Home_db_control INFO     adding home on mls 1308935
+06-14 01:46 Home_db_control INFO     successfully added.
+06-14 01:46 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/18029-Stone-Ave-N-98133/home/82944.
+06-14 01:46 Home_db_control INFO     adding home on mls 1307182
+06-14 01:46 Home_db_control INFO     successfully added.
+06-14 01:47 testmethod_test_get_homes ERROR    error in /WA/Shoreline/18010-Stone-Ave-N-98133/unit-A/home/22808577.
+'home_operation' object has no attribute 'logger'
+06-14 01:47 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/17917-Fremont-Ave-N-98133/home/80851.
+06-14 01:47 Home_db_control INFO     adding home on mls 1306414
+06-14 01:47 Home_db_control INFO     successfully added.
+06-14 01:47 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/17256-Greenwood-Pl-N-98133/home/76105.
+06-14 01:47 Home_db_control INFO     adding home on mls 1304608
+06-14 01:47 Home_db_control INFO     successfully added.
+06-14 01:48 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/17031-8th-Ave-NE-98155/home/87188.
+06-14 01:48 Home_db_control INFO     adding home on mls 1290081
+06-14 01:48 Home_db_control INFO     successfully added.
+06-14 01:48 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/16924-4th-Ave-NE-98155/home/85416.
+06-14 01:48 Home_db_control INFO     adding home on mls 1295252
+06-14 01:48 Home_db_control INFO     successfully added.
+06-14 01:48 testmethod_test_get_homes ERROR    error in /WA/Shoreline/16531-25th-Ave-NE-98155/home/88091.
+'home_operation' object has no attribute 'logger'
+06-14 01:48 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/1637-NE-190th-St-98155/home/90796.
+06-14 01:48 Home_db_control INFO     adding home on mls 1307817
+06-14 01:48 Home_db_control INFO     successfully added.
+06-14 01:49 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/16301-Wallingford-Ave-N-98133/home/83094.
+06-14 01:49 Home_db_control INFO     adding home on mls 1276354
+06-14 01:49 Home_db_control INFO     successfully added.
+06-14 01:49 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/1620-N-190th-St-98133/home/79135.
+06-14 01:49 Home_db_control INFO     adding home on mls 1296610
+06-14 01:49 Home_db_control INFO     successfully added.
+06-14 01:49 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/1615-NE-195th-St-98155/home/91271.
+06-14 01:49 Home_db_control INFO     adding home on mls 1279901
+06-14 01:49 Home_db_control INFO     successfully added.
+06-14 01:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/16111-3rd-Ave-NE-98155/home/85880.
+06-14 01:50 Home_db_control INFO     adding home on mls 1309697
+06-14 01:50 Home_db_control INFO     successfully added.
+06-14 01:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/16106-Densmore-Ave-N-98133/home/82780.
+06-14 01:50 Home_db_control INFO     adding home on mls 1306168
+06-14 01:50 Home_db_control INFO     successfully added.
+06-14 01:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/16025-Wallingford-Ave-N-98133/home/83892.
+06-14 01:50 Home_db_control INFO     adding home on mls 1300302
+06-14 01:50 Home_db_control INFO     successfully added.
+06-14 01:50 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/1575-NE-171st-St-98155/home/88073.
+06-14 01:50 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:51 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/15720-5th-Ave-NE-98155/home/87362.
+06-14 01:51 Home_db_control INFO     adding home on mls 1305022
+06-14 01:51 Home_db_control INFO     successfully added.
+06-14 01:51 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/15712-5th-Ave-NE-98155/home/87359.
+06-14 01:51 Home_db_control INFO     adding home on mls 1304920
+06-14 01:51 Home_db_control INFO     successfully added.
+06-14 01:51 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/15534-Meridian-Ave-N-98133/home/81389.
+06-14 01:51 Home_db_control INFO     adding home on mls 1308450
+06-14 01:51 Home_db_control INFO     successfully added.
+06-14 01:51 Proxy        INFO     122.183.137.190:8080 is not available anymore, moving to next. timed out
+06-14 01:52 testmethod_test_get_homes ERROR    error in /WA/Shoreline/15307-10th-Ave-NE-98155/home/86237.
+'home_operation' object has no attribute 'logger'
+06-14 01:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/152-N-175th-St-98133/home/145481265.
+06-14 01:52 home_operation ERROR    Unknown error in fetch_basic_info. list index out of range
+06-14 01:52 testmethod_test_get_homes ERROR    error in /WA/Shoreline/152-N-175th-St-98133/home/145481265.
+list index out of range
+06-14 01:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/1516-NE-171st-St-98155/home/88637.
+06-14 01:52 home_operation WARNING  NOT FOR SALE - READY TO BUILD
+06-14 01:52 home_operation INFO     Just fetched the data from https://www.redfin.com/WA/Shoreline/14600-9th-Pl-NE-98155/home/87526.
+06-14 01:52 Home_db_control INFO     adding home on mls 1309050
+06-14 01:52 Home_db_control INFO     successfully added.

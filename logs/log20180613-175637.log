@@ -1,0 +1,2 @@
+06-13 17:56 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 17:56 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None

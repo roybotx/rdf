@@ -1,14 +1,15 @@
 import MySQLdb
-from constants import BASE_URL
+from constants import BASE_URL, UA
 import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from models.home import Home
 from db_controls.db_controls import (Home_db_control, Link_db_control)
 import time
-from my_logger import logger
+from my_logger import my_logger
 from operations.home_operation import home_operation
 from operations.link_operation import link_operation
+from proxy_tool import Proxy
 
 zipcodes = []
 
@@ -17,12 +18,14 @@ def get_zipcode_set():
     global zipcodes
     db = MySQLdb.connect(host = "localhost", port = 3306, user = "root", passwd = "", db = "housing")
     cur = db.cursor()
-    cur.execute("select zcode from zipcodes where code_type = 'Standard' and county = 'KingCounty'")
+    cur.execute("select zcode from zipcodes where code_type = 'Standard' and county = 'KingCounty' and crawled != 1")
     zipcodes = [code[0] for code in cur.fetchall()]
     
     cur.close()
     db.close()
     return zipcodes
+
+    
 
 
 def fetch_links(zipcode):
@@ -67,9 +70,12 @@ def get_links():
     db.close()
     return links
 
+
 def testmethod_test_get_homes(): 
+    logger = my_logger("testmethod_test_get_homes")
+    
     links = get_links()
-    logger.info("{} links in total".format(len(links)))
+    logger.logger.info("{} links in total".format(len(links)))
     hm_db = Home_db_control("housing")
     for link in links:
         try:
@@ -78,10 +84,15 @@ def testmethod_test_get_homes():
             if u.need_to_check:
                 hm_db.add_unit(Home(u.info))   
         except Exception as e:
-            logger.error("error in {}.\n{}".format(link, str(e)))
+            logger.logger.error("error in {}.\n{}".format(link, str(e)))
     hm_db.close_engine()
 
+
 def testmethod_test_get_links():
+
+    db = MySQLdb.connect(host = "localhost", port = 3306, user = "root", passwd = "", db = "housing")
+    cur = db.cursor()    
+    logger = my_logger("testmethod_test_get_homes")
     try:
         codes = get_zipcode_set()
         lc = Link_db_control("housing")
@@ -90,25 +101,46 @@ def testmethod_test_get_links():
             links = lo.fetch_all_pages()
             if links is not None and len(links) > 0:
                 lc.add_links(links)
+            cur.execute("update zipcodes set crawled = 1 where zcode = " + str(zipcode))
+            db.commit()
         lc.close_engine()
     except Exception as e:
-        logger.error("err in testmethod_test_get_links().{}".format(str(e)))
+        logger.logger.error("err in testmethod_test_get_links().{}".format(str(e)))
+    finally:
+        cur.close()
+        db.close()
+
+
+def testmethod_test_get_links_98001():
+    logger = my_logger("testmethod_test_get_links_98001")
+    try:
+        lc = Link_db_control("housing")
+        lo = link_operation(98011)
+        links = lo.fetch_all_pages()
+        if links is not None and len(links) > 0:
+            lc.add_links(links)
+        lc.close_engine()
+    except Exception as e:
+        logger.logger.error("err in testmethod_test_get_links_98001().{}".format(str(e)))
     
 
-testmethod_test_get_links()
-testmethod_test_get_homes() 
-
-#   $4,868,000  5,774 Sq. Ft.   $843 / Sq. Ft.      5.5
-# import re
-# values = ["$4,868,000", "5,774 Sq. Ft.", "$843 / Sq. Ft.", "5.5"]
-# regex = re.compile(r"[\d\(,.)*\d]+")
-# for value in values:
-#     res = regex.findall(value)[0]
-#     res = re.sub(",", "", res)
-#     print(res)
+def testmethod_test():
+    ho = home_operation("https://www.redfin.com/WA/Woodinville/15050-127th-Pl-NE-98072/home/143458227")
+    ho.fetch_data()
+    print(ho.info)
 
 
+def testmethod_test_proxies():
+    px_tool = Proxy()
+    px_tool.get_proxies()
+    for i in range(0, 100):
+        one = px_tool.get_available_proxy()
+        html = requests.get("http://ip.chinaz.com/getip.aspx", headers = {"user-agent": UA.random}, proxies = one, timeout = 10).text
+        print(html)
 
-# u = unit("https://www.redfin.com/WA/Woodinville/15050-127th-Pl-NE-98072/home/143458227")
-# u.fetch_data()
-# print(u.info)
+
+# testmethod_test_get_links()
+# testmethod_test_proxies()
+# testmethod_test_get_links_98001()
+# testmethod_test_get_homes()
+

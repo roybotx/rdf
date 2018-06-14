@@ -1,0 +1,9 @@
+06-13 17:30 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 17:30 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 17:30 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:30 link_operation ERROR    Unknow err in __make_call().HTTPSConnectionPool(host='www.redfin.com', port=443): Max retries exceeded with url: /zipcode/98001 (Caused by ProxyError('Cannot connect to proxy.', OSError('Tunnel connection failed: 503 Too many open connections',)))
+Trying 3 more time(s)...
+06-13 17:30 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:30 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001 HTTP/1.1" 403 None
+06-13 17:30 link_operation ERROR    Unknow err in __fetch_all_links_on_page().'NoneType' object has no attribute 'getText'
+06-13 17:30 testmethod_test_get_links_98001 ERROR    err in testmethod_test_get_links().object of type 'NoneType' has no len()

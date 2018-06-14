@@ -7,3 +7,9 @@ TEST_URL = "https://www.redfin.com/WA/Bothell/10818-NE-148th-Ln-98011/unit-P204/
 ZIPCODE_SEARCH_URL = "https://www.redfin.com/zipcode/"
 
 UA = UserAgent()
+
+PROXY_TEST_URL = "http://ip.chinaz.com/getip.aspx"
+
+TARGET_PROXY_URL = "https://free-proxy-list.net/anonymous-proxy.html"
+
+WAIT_TIME = 15

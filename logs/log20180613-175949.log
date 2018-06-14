@@ -1,0 +1,229 @@
+06-13 17:59 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 17:59 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:00 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:00 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001 HTTP/1.1" 200 None
+06-13 18:00 link_operation INFO     6 pages in total to fetch.
+06-13 18:00 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-2
+06-13 18:00 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:00 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-2 HTTP/1.1" 200 None
+06-13 18:00 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-3
+06-13 18:00 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:00 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-3 HTTP/1.1" 200 None
+06-13 18:00 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-4
+06-13 18:01 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:01 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-4 HTTP/1.1" 403 5001
+06-13 18:01 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:01 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-4 HTTP/1.1" 200 None
+06-13 18:01 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-5
+06-13 18:01 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:01 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:01 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:01 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-5 HTTP/1.1" 200 None
+06-13 18:01 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-6
+06-13 18:01 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:02 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-6 HTTP/1.1" 200 None
+06-13 18:02 Link_db_control INFO     /WA/Federal-Way/4432-S-332nd-Pl-98001/home/2089389 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/5138-S-324th-St-98001/home/361514 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/29003-55th-Ave-S-98001/home/210068 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/1118-U-St-NW-98001/home/344551 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/36145-W-Valley-Hwy-S-98001/home/364697 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/4325-S-347th-St-98001/home/362532 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/5628-S-305th-St-98001/home/209682 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Federal-Way/4502-S-330th-Pl-98001/home/28624428 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/29625-55th-Ave-S-98001/home/210165 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/304-Junction-Blvd-98001/home/365300 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/2025-W-St-NW-98001/home/209550 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/6339-S-301st-Pl-98001/unit-23/home/145278314 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/30841-52nd-Ave-S-98001/home/210903 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/5506-S-296th-Pl-98001/home/209514 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/29503-54th-Ct-S-98001/home/2077985 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37517-34th-Ave-S-98001/home/18659711 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Federal-Way/37701-30th-Pl-S-98003/home/109660698 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/4010-S-380th-Pl-98001/home/45464935 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/908-Pike-St-NW-98001/home/344760 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/28808-40th-Ave-S-98001/home/211793 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/5868-S-326th-Ct-98001/home/105291535 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/38110-55th-Ave-S-98001/home/364088 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/649-Main-St-98001/home/365623 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37826-35th-Way-S-98001/home/364055 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/5460-S-Star-Lake-Rd-98001/home/344942 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/33852-56th-Pl-S-98001/home/39904957 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/34318-43rd-Ave-S-98001/home/363657 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/31323-32nd-Ave-S-98001/home/205219 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/403-Chicago-Ave-98001/home/365217 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35628-56th-Ave-S-98001/home/22697489 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35457-56th-Ave-S-98001/home/22697519 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35453-56th-Ave-S-98001/home/22697516 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37916-55th-Ave-S-98001/home/364461 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/30600-34th-Pl-S-98001/home/212139 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/53rd-Ave-S-98001/home/101645042 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/4416-S-352nd-St-98001/home/22514470 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/29308-35th-Ave-S-98001/home/211419 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Federal-Way/37703-31st-Ave-S-98003/home/109660732 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35425-55th-Ave-S-98001/home/143320423 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35421-55th-Ave-S-98001/home/145959380 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/38009-38th-Ave-S-98001/home/365121 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Federal-Way/4237-S-326th-Pl-98001/home/362685 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/541-Chicago-Ave-98001/home/365707 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/4409-S-349th-St-98001/home/363650 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/5228-S-328th-St-98001/home/362479 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/38039-37th-Pl-S-98001/home/363923 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35950-W-Valley-Hwy-S-98001/home/364589 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/34612-38th-Ave-S-98001/home/18665023 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/515-4th-Ave-N-98001/home/2060937 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/4508-S-342nd-St-98001/home/363868 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/31834-44th-Ave-S-98001/home/362504 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35017-37th-Ave-S-98001/home/361752 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35622-56th-Ave-S-98001/home/12539348 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/32003-54th-Ct-S-98001/home/362405 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/302-32nd-Ave-S-98001/home/145649087 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3816-S-374th-St-98001/home/364913 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/30616-34th-Pl-S-98001/home/22479100 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/288-55th-Ave-S-98001/home/97947737 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/38062-36th-Pl-S-98001/home/364618 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35436-55th-Ave-S-98001/home/145578252 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37407-49th-Ave-S-98001/home/364522 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/21-F-St-NW-98001/home/217893 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37242-42nd-Ave-S-98001/home/364053 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3627-S-Star-Lake-Rd-98001/home/209447 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3139-S-276th-Home-Site-11-Ct-98001/home/145524685 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/54-Pl-S-292nd-Pl-98001/home/145512606 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3089-S-276th-Home-Site-19-Ct-98001/home/145499108 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3201-W-Valley-Hwy-S-98001/home/22627635 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Federal-Way/3711-S-322nd-St-98001/home/363201 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37305-34th-Ave-S-98001/home/145304454 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/33-S-374th-St-98001/home/145303991 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35419-56th-Ave-S-98001/home/22697508 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/4434-S-352nd-Ln-98001/home/22637542 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/31-S-299th-St-98001/home/113365601 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/365-10th-Ave-N-98001/home/145133830 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3208-S-Star-Lake-Rd-98001/home/12317463 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/1545-W-Valley-Hwy-S-98001/home/144639086 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/282-Bingaman-Pond-98001/home/69800275 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/33015-56th-Ave-S-98001/home/144918719 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/37623-48th-Ave-S-98001/home/108281448 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/36501-W-Valley-Hwy-S-98001/home/144889798 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/W-Valley-Hwy-S-98001/home/144834807 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/31400-44th-Ave-S-98001/home/144798481 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/366-52nd-Ave-S-98001/home/40365742 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/36505-W-Valley-Hwy-S-98001/home/144585102 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/36523-W-Valley-Hwy-S-98001/home/144585077 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/36521-W-Valley-Hwy-S-98001/home/144585055 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/32867-46th-Pl-S-98001/home/362744 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/340-55th-Ave-S-98001/home/143996176 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/35423-55th-Ave-S-98001/home/143499268 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/31824-44th-Ave-S-98001/home/2061778 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/3418-S-Star-Lake-Rd-98001/home/22093206 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Kent/28421-85th-Ave-S-98032/home/344979 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/49th-Ave-S-98001/home/22100704 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/55th-Ave-S-98001/home/22094280 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/Algona-Blvd-N-98001/home/112981375 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Algona/328-5th-Ave-NW-98001/home/365521 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/364-32nd-Ave-S-98001/home/108941246 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Pepper-Hill/Hudson/home/137388279 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Pepper-Hill/Emerson/home/137388300 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Calla-Crest/Sybil/home/143015152 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Pepper-Hill/Ambia/home/144475406 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Pepper-Hill/Astoria/home/145077721 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Wyncrest/Bainbridge-Next-Gen/home/145227186 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Wyncrest/Lynden/home/145237947 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Wyncrest/Carnation/home/145237949 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Wyncrest/Magnolia/home/145333301 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Star-Water/Plan-2886/home/145345855 is already in the database.
+06-13 18:02 Link_db_control INFO     /WA/Auburn/Star-Water/Plan-2623/home/145377425 is already in the database.
+06-13 18:02 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:02 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:02 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:02 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98002 HTTP/1.1" 200 None
+06-13 18:02 link_operation INFO     3 pages in total to fetch.
+06-13 18:02 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98002/page-2
+06-13 18:02 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:02 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98002/page-2 HTTP/1.1" 200 None
+06-13 18:02 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98002/page-3
+06-13 18:03 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:03 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98002/page-3 HTTP/1.1" 200 None
+06-13 18:03 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:03 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:03 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:03 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98003 HTTP/1.1" 200 None
+06-13 18:03 link_operation INFO     5 pages in total to fetch.
+06-13 18:03 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98003/page-2
+06-13 18:03 Proxy        INFO     47.206.51.67:8080 is not available anymore, moving to next. timed out
+06-13 18:03 link_operation ERROR    Unknow err in __make_call().Set changed size during iteration
+Trying 3 more time(s)...
+06-13 18:04 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:04 link_operation ERROR    Unknow err in __make_call().HTTPSConnectionPool(host='www.redfin.com', port=443): Max retries exceeded with url: /zipcode/98003/page-2 (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'ssl3_get_record', 'wrong version number')],)",),))
+Trying 2 more time(s)...
+06-13 18:04 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:04 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:04 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:04 link_operation ERROR    Unknow err in __make_call().HTTPSConnectionPool(host='www.redfin.com', port=443): Max retries exceeded with url: /zipcode/98003/page-2 (Caused by ProxyError('Cannot connect to proxy.', NewConnectionError('<urllib3.connection.VerifiedHTTPSConnection object at 0x0181EBD0>: Failed to establish a new connection: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond',)))
+Trying 1 more time(s)...
+06-13 18:04 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98003/page-3
+06-13 18:05 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:05 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98003/page-3 HTTP/1.1" 200 None
+06-13 18:05 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98003/page-4
+06-13 18:05 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:05 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98003/page-4 HTTP/1.1" 200 None
+06-13 18:05 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98003/page-5
+06-13 18:05 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:05 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98003/page-5 HTTP/1.1" 200 None
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/30437-11th-Ave-S-98003/home/351722 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/2100-S-285th-St-98003/home/203749 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/37940-20th-Pl-S-98003/home/365898 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/2100-S-336th-St-98003/unit-C2/home/144169515 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/29645-18th-Ave-S-98003/unit-A202/home/146039564 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/31720-3rd-Pl-S-98003/home/350912 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/117-S-340th-St-98003/unit-A/home/23436 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/27740-23rd-Ave-S-98003/home/205190 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/1830-S-284th-Ln-98003/unit-G104/home/12327595 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/157-S-330th-St-98003/unit-D/home/7350 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/30213-25th-Pl-S-98003/home/205042 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/28317-15th-Ave-S-98003/home/345842 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/28932-11th-Pl-S-98003/home/347758 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/532-S-Marine-Hills-Way-98003/home/347052 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/29828-18th-Ave-S-98003/home/2069115 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/29403-19th-Ave-S-98003/home/204978 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/30430-8th-Pl-S-98003/home/351103 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/29826-18th-Ave-S-98003/home/22492253 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/2500-S-370th-St-98003/unit-72/home/103962870 is already in the database.
+06-13 18:06 Link_db_control INFO     /WA/Federal-Way/2101-S-324th-St-98003/unit-54/home/22056487 is already in the database.
+06-13 18:06 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:06 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:06 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:06 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98004 HTTP/1.1" 200 None
+06-13 18:06 link_operation INFO     6 pages in total to fetch.
+06-13 18:06 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98004/page-2
+06-13 18:06 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:06 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98004/page-2 HTTP/1.1" 200 None
+06-13 18:06 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98004/page-3
+06-13 18:06 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:07 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98004/page-3 HTTP/1.1" 200 None
+06-13 18:07 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98004/page-4
+06-13 18:07 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:07 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98004/page-4 HTTP/1.1" 200 None
+06-13 18:07 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98004/page-5
+06-13 18:07 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:07 link_operation ERROR    Unknow err in __make_call().HTTPSConnectionPool(host='www.redfin.com', port=443): Max retries exceeded with url: /zipcode/98004/page-5 (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'ssl3_get_record', 'wrong version number')],)",),))
+Trying 3 more time(s)...
+06-13 18:07 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:07 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:08 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:08 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98004/page-5 HTTP/1.1" 200 None
+06-13 18:08 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98004/page-6
+06-13 18:08 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:08 link_operation ERROR    Unknow err in __make_call().HTTPSConnectionPool(host='www.redfin.com', port=443): Max retries exceeded with url: /zipcode/98004/page-6 (Caused by SSLError(SSLError("bad handshake: Error([('SSL routines', 'ssl3_get_record', 'wrong version number')],)",),))
+Trying 3 more time(s)...
+06-13 18:08 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:08 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:09 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:09 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98004/page-6 HTTP/1.1" 200 None
+06-13 18:09 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 18:09 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 18:09 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 18:09 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98005 HTTP/1.1" 200 None
+06-13 18:09 link_operation INFO     2 pages in total to fetch.
+06-13 18:09 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98005/page-2
+06-13 18:10 Proxy        INFO     47.206.51.67:8080 is not available anymore, moving to next. timed out
+06-13 18:10 link_operation ERROR    Unknow err in __make_call().Set changed size during iteration
+Trying 3 more time(s)...

@@ -1,42 +1,60 @@
-from constants import ZIPCODE_SEARCH_URL, UA
+from constants import ZIPCODE_SEARCH_URL, UA, WAIT_TIME
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 import requests
-import re
-import time
-from constants import UA
-from my_logger import logger
+import logging
+from proxy_tool import Proxy
 
 
 class link_operation(object):
     def __init__(self, zipcode):
-        self.request_url = ZIPCODE_SEARCH_URL + str(zipcode) 
+        self.request_url = ZIPCODE_SEARCH_URL + str(zipcode)
+        self.proxy_tool = Proxy()
+        self.proxy_tool.get_proxies()
+        self.logger = logging.getLogger("link_operation")
 
     def __calc_total_page_num(self, url):
         try:
             pagination_str = self.html.find("div", {"class": "viewingPage"}).getText()
             pagination = int(pagination_str[len("Viewing page 1 of "): -len("(Download All)")])
-            self.links = self.__fetch_all_links_on_page()
             return [("%s/page-%d") % (url, i + 1)for i in range(1, pagination)]
         except Exception as e:
-            logger.error("Unknow err in __fetch_all_links_on_page().{}".format(str(e)))
+            self.logger.error("Unknow err in __fetch_all_links_on_page().{}".format(str(e)))
 
     def __fetch_all_links_on_page(self):
         try:
-            return [link.attrs.get("href") for link in self.html.findAll("a", {"class": "cover-all"})]
+            ls = [link.attrs.get("href") for link in self.html.findAll("a", {"class": "cover-all"})]
+            print(len(ls))
+            return ls
         except Exception as e:
-            logger.error("Unknow err in __fetch_all_links_on_page().{}".format(str(e)))
+            self.logger.error("Unknow err in __fetch_all_links_on_page().{}".format(str(e)))
+
+    def __make_call(self, url, retries):
+        for attempt in range(retries):
+            resp = None
+            try:
+                resp = requests.get(url, headers = {"user-agent": UA.random}, proxies = self.proxy_tool.get_available_proxy(WAIT_TIME))
+            except Exception as e:
+                self.logger.error("Unknow err in __make_call().{}\nTrying {} more time(s)...".format(str(e), 3 - attempt))
+            else:
+                self.html = BeautifulSoup(resp.text, "lxml")
+                break
+
+    def __is_roboted(self):
+        return "looks like our usage analysis algorithms think that you\n    might be a robot" in self.html.text
 
     def fetch_all_pages(self):
-        try:
-            resp = requests.get(self.request_url, headers = {"user-agent": UA.random})
-            time.sleep(15)
-            self.html = BeautifulSoup(resp.text, "lxml") 
-            self.pages = self.__calc_total_page_num(self.request_url)
-            for page in self.pages:
-                self.html = BeautifulSoup(requests.get(page, headers = {"user-agent": UA.random}).text, "lxml")
-                time.sleep(15)
-                self.links.extend(self.__fetch_all_links_on_page())
-            return self.links
-        except Exception as e:
-            logger.error("Unknow err in fetch_all_pages().{}".format(str(e)))
+        url = self.request_url
+        self.__make_call(url, 3)
+        if self.__is_roboted():
+            self.__make_call(url, 3)
+        self.links = self.__fetch_all_links_on_page()
+        self.pages = self.__calc_total_page_num(url)
+        self.logger.info("{} pages in total to fetch.".format(len(self.pages) + 1))
+        for page in self.pages:
+            self.logger.info("Getting links from page {}".format(page))
+            url = page   
+            self.__make_call(url, 3)
+            if self.__is_roboted():
+                self.__make_call(url, 3)
+            self.links.extend(self.__fetch_all_links_on_page()) 
+        return self.links

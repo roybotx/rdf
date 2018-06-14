@@ -1,0 +1,24 @@
+06-13 17:32 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 17:32 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 17:32 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:32 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001 HTTP/1.1" 200 None
+06-13 17:32 link_operation INFO     6 pages in total to fetch.
+06-13 17:32 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-2
+06-13 17:33 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:33 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-2 HTTP/1.1" 200 None
+06-13 17:33 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-3
+06-13 17:33 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 17:33 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 17:33 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:33 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-3 HTTP/1.1" 403 5001
+06-13 17:33 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-4
+06-13 17:33 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:33 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-4 HTTP/1.1" 200 None
+06-13 17:33 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-5
+06-13 17:34 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:34 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-5 HTTP/1.1" 200 None
+06-13 17:34 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-6
+06-13 17:34 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
+06-13 17:34 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
+06-13 17:34 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
+06-13 17:34 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-6 HTTP/1.1" 200 None

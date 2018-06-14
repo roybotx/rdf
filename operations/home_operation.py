@@ -1,33 +1,40 @@
+from constants import UA, WAIT_TIME
 import requests
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 import re
 from datetime import datetime
-import time
-from my_logger import logger
+import logging
+from proxy_tool import Proxy
 
 
 class home_operation(object):
     def __init__(self, url):
+        self.proxy_tool = Proxy()
+        self.proxy_tool.get_proxies()
         self.html = self.make_call(url)
         self.info = {"link": url}
         self.need_to_check = True
-        logger.info("Just fetched the data from {}. sleeping for 20 seconds".format(url))
-        time.sleep(30)
+        self.logger = logging.getLogger("home_operation")
+        self.logger.info("Just fetched the data from {}.".format(url))
+        # time.sleep(30)
 
     def make_call(self, url):
-        user_agent = UserAgent()
-        headers = {"user-agent": str(user_agent.chrome)}
-        resp = requests.get(url, headers = headers)
-        return BeautifulSoup(resp.text, "lxml")
+        headers = {"user-agent": UA.random}
+        for attempt in range(3):
+            try:
+                resp = requests.get(url, headers = headers, proxies = self.proxy_tool.get_available_proxy(WAIT_TIME))
+            except Exception as e:
+                self.logger.error("Failed to get resp from {}\nTrying {} more time(3)...".format(url, 3 - attempt))
+            else:
+                return BeautifulSoup(resp.text, "lxml")
 
     def fetch_data(self):
         if "NOT FOR SALE" in str(self.html.contents): 
-            logger.warning("NOT FOR SALE")
+            self.logger.warning("NOT FOR SALE")
             self.need_to_check = False
             return
         elif "READY TO BUILD" in str(self.html.contents):
-            logger.warning("NOT FOR SALE - READY TO BUILD")
+            self.logger.warning("NOT FOR SALE - READY TO BUILD")
             self.need_to_check = False
             return
         # self.fetch_main_content()
@@ -72,7 +79,7 @@ class home_operation(object):
                 value = more_info.contents[i].find("span", {"class": "value"}).getText()
                 self.info[key] = value
         except Exception as e:
-            logger.error("Unknown error in fetch_basic_info. {}".format(str(e)))
+            self.logger.error("Unknown error in fetch_basic_info. {}".format(str(e)))
             return
 
     def __fetch_key_info(self):
@@ -83,7 +90,7 @@ class home_operation(object):
                 value = key_info_el.contents[1].getText()
                 self.info[key] = value
         except Exception as e:
-            logger.error("Unknown error in fetch_key_info(). {}".format(str(e)))
+            self.logger.error("Unknown error in fetch_key_info(). {}".format(str(e)))
             return
 
     def __fetch_main_content(self):
@@ -132,8 +139,6 @@ class home_operation(object):
     
     def __process_date_value(self, value):
         return datetime.strptime(value, "%A, %B %d, %Y").strftime('%Y-%m-%d %H:%M:%S')
-
-
 
 # u = unit(constants.TEST_URL)
 # u.fetch_data()

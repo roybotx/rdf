@@ -1,8 +1,0 @@
-06-13 17:37 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): free-proxy-list.net
-06-13 17:37 urllib3.connectionpool DEBUG    https://free-proxy-list.net:443 "GET /anonymous-proxy.html HTTP/1.1" 200 None
-06-13 17:37 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
-06-13 17:37 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001 HTTP/1.1" 200 None
-06-13 17:37 link_operation INFO     6 pages in total to fetch.
-06-13 17:37 link_operation INFO     Getting links from page https://www.redfin.com/zipcode/98001/page-2
-06-13 17:37 urllib3.connectionpool DEBUG    Starting new HTTPS connection (1): www.redfin.com
-06-13 17:37 urllib3.connectionpool DEBUG    https://www.redfin.com:443 "GET /zipcode/98001/page-2 HTTP/1.1" 200 None

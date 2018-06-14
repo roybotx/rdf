@@ -23,7 +23,7 @@ class Proxy():
                 self.logger.warning("Couldn't get valid proxies, waiting for 10 seconds to refresh the site, retry {} more time(s)...".format(5 - i))
                 time.sleep(10)
             else:
-                self.proxies = set()
+                self.proxies = list()
                 if table is not None:
                     tbody = table.contents[1]
                     for tr in tbody.contents:
@@ -31,7 +31,7 @@ class Proxy():
                             data = tr.contents
                             if "yes" in data[-2].getText():
                                 prox = "{}:{}".format(data[0].getText(), data[1].getText())
-                                self.proxies.add(prox)
+                                self.proxies.append(prox)
                         if len(self.proxies) == 5:
                             break
                 self.proxies = self.__test_proxy_availability()
@@ -48,15 +48,16 @@ class Proxy():
             except Exception:
                 pass
                 # self.logger.info("Connection Error, Fail. Removing proxy {}".format(p))
-        return res
+        return list(res)
 
     def get_available_proxy(self, wait_time):
         if len(self.proxies) == 0:
             self.get_proxies()
-        for p in self.proxies:
+
+        while True:
+            p = self.proxies.pop()
             ip = p.split(":")[0]
             port = p.split(":")[1]
-            self.proxies.remove(p)
             try:
                 telnetlib.Telnet(ip, port = port, timeout = 20)
                 time.sleep(wait_time)

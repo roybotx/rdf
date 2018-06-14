@@ -19,6 +19,7 @@ class my_logger():
         console.setFormatter(formatter)
         # add the handler to the root logger
         logging.getLogger('').addHandler(console)
+        logging.getLogger("urllib3").setLevel(logging.warning)
         self.logger = logging.getLogger(logger_name)
 
 # Now, we can log to the root logger, or any other logger. First the root...

@@ -1,21 +1,19 @@
 import MySQLdb
-from constants import BASE_URL, UA
+from constants import BASE_URL, UA, WAIT_TIME
 import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from models.home import Home
 from db_controls.db_controls import (Home_db_control, Link_db_control)
 import time
-from my_logger import my_logger
 from operations.home_operation import home_operation
 from operations.link_operation import link_operation
 from proxy_tool import Proxy
-
-zipcodes = []
+import utils
+import logging
 
 
 def get_zipcode_set():
-    global zipcodes
     db = MySQLdb.connect(host = "localhost", port = 3306, user = "root", passwd = "", db = "housing")
     cur = db.cursor()
     cur.execute("select zcode from zipcodes where code_type = 'Standard' and county = 'KingCounty' and crawled != 1")
@@ -72,10 +70,10 @@ def get_links():
 
 
 def testmethod_test_get_homes(): 
-    logger = my_logger("testmethod_test_get_homes")
+    logger = logging.getLogger("testmethod_test_get_homes")
     
     links = get_links()
-    logger.logger.info("{} links in total".format(len(links)))
+    logger.info("{} links in total".format(len(links)))
     hm_db = Home_db_control("housing")
     for link in links:
         try:
@@ -84,15 +82,15 @@ def testmethod_test_get_homes():
             if u.need_to_check:
                 hm_db.add_unit(Home(u.info))   
         except Exception as e:
-            logger.logger.error("error in {}.\n{}".format(link, str(e)))
+            logger.error("error in {}.\n{}".format(link, str(e)))
     hm_db.close_engine()
+    logger.info("testmethod_test_get_homes finished.")
 
 
 def testmethod_test_get_links():
-
     db = MySQLdb.connect(host = "localhost", port = 3306, user = "root", passwd = "", db = "housing")
     cur = db.cursor()    
-    logger = my_logger("testmethod_test_get_homes")
+    logger = logging.getLogger("testmethod_test_get_links")
     try:
         codes = get_zipcode_set()
         lc = Link_db_control("housing")
@@ -105,14 +103,15 @@ def testmethod_test_get_links():
             db.commit()
         lc.close_engine()
     except Exception as e:
-        logger.logger.error("err in testmethod_test_get_links().{}".format(str(e)))
+        logger.error("err in testmethod_test_get_links().{}".format(str(e)))
     finally:
         cur.close()
         db.close()
+        logger.info("testmethod_test_get_links finished.")
 
 
 def testmethod_test_get_links_98001():
-    logger = my_logger("testmethod_test_get_links_98001")
+    logger = logging.getLogger("testmethod_test_get_links_98001")
     try:
         lc = Link_db_control("housing")
         lo = link_operation(98011)
@@ -121,7 +120,8 @@ def testmethod_test_get_links_98001():
             lc.add_links(links)
         lc.close_engine()
     except Exception as e:
-        logger.logger.error("err in testmethod_test_get_links_98001().{}".format(str(e)))
+        logger.error("err in testmethod_test_get_links_98001().{}".format(str(e)))    
+    logger.info("testmethod_test_get_links finished.")
     
 
 def testmethod_test():
@@ -134,13 +134,14 @@ def testmethod_test_proxies():
     px_tool = Proxy()
     px_tool.get_proxies()
     for i in range(0, 100):
-        one = px_tool.get_available_proxy()
+        one = px_tool.get_available_proxy(WAIT_TIME)
         html = requests.get("http://ip.chinaz.com/getip.aspx", headers = {"user-agent": UA.random}, proxies = one, timeout = 10).text
         print(html)
 
-
-# testmethod_test_get_links()
+utils.config_logging()
+testmethod_test_get_links()
 # testmethod_test_proxies()
 # testmethod_test_get_links_98001()
-# testmethod_test_get_homes()
+testmethod_test_get_homes()
+
 

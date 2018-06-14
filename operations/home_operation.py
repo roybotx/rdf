@@ -11,22 +11,28 @@ class home_operation(object):
     def __init__(self, url):
         self.proxy_tool = Proxy()
         self.proxy_tool.get_proxies()
-        self.html = self.make_call(url)
+        self.__make_call(url)
         self.info = {"link": url}
         self.need_to_check = True
         self.logger = logging.getLogger("home_operation")
         self.logger.info("Just fetched the data from {}.".format(url))
         # time.sleep(30)
 
-    def make_call(self, url):
+    def __make_call(self, url):
         headers = {"user-agent": UA.random}
         for attempt in range(3):
             try:
                 resp = requests.get(url, headers = headers, proxies = self.proxy_tool.get_available_proxy(WAIT_TIME))
+                self.html = BeautifulSoup(resp.text, "lxml")
+                if self.__is_roboted():
+                    raise Exception("Got roboted...")
             except Exception as e:
-                self.logger.error("Failed to get resp from {}\nTrying {} more time(3)...".format(url, 3 - attempt))
+                self.logger.error("Failed to get resp from {}.{}\nTrying {} more time(3)...".format(url, str(e), 3 - attempt))
             else:
-                return BeautifulSoup(resp.text, "lxml")
+                break
+
+    def __is_roboted(self):
+        return "looks like our usage analysis algorithms think that you\n    might be a robot" in self.html.text
 
     def fetch_data(self):
         if "NOT FOR SALE" in str(self.html.contents): 
@@ -80,7 +86,6 @@ class home_operation(object):
                 self.info[key] = value
         except Exception as e:
             self.logger.error("Unknown error in fetch_basic_info. {}".format(str(e)))
-            return
 
     def __fetch_key_info(self):
         try:
@@ -91,7 +96,6 @@ class home_operation(object):
                 self.info[key] = value
         except Exception as e:
             self.logger.error("Unknown error in fetch_key_info(). {}".format(str(e)))
-            return
 
     def __fetch_main_content(self):
         amenities_container_div = self.html.find("div", {"class": "amenities-container"})

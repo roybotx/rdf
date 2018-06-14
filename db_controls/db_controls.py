@@ -131,7 +131,8 @@ class Link_db_control():
                     already_in.append(l)
             self.session.commit()
             self.logger.info("Total link amount is {}. {} links are already in the database:".format(len(links[0]), len(already_in)))
-            self.logger.info(already_in)
+            if len(already_in) > 0:
+                self.logger.info(already_in)
         except SQLAlchemyError as e:
             self.logger.error("error in adding link {}. {}".format(l, str(e)))
             self.close_engine()

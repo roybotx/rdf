@@ -18,12 +18,11 @@ class link_operation(object):
             pagination = int(pagination_str[len("Viewing page 1 of "): -len("(Download All)")])
             return [("%s/page-%d") % (url, i + 1)for i in range(1, pagination)]
         except Exception as e:
-            self.logger.error("Unknow err in __fetch_all_links_on_page().{}".format(str(e)))
+            self.logger.error("Unknow err in __calc_total_page_num().{}".format(str(e)))
 
     def __fetch_all_links_on_page(self):
         try:
             ls = [link.attrs.get("href") for link in self.html.findAll("a", {"class": "cover-all"})]
-            print(len(ls))
             return ls
         except Exception as e:
             self.logger.error("Unknow err in __fetch_all_links_on_page().{}".format(str(e)))
@@ -47,14 +46,16 @@ class link_operation(object):
         self.__make_call(url, 3)
         if self.__is_roboted():
             self.__make_call(url, 3)
-        self.links = self.__fetch_all_links_on_page()
         self.pages = self.__calc_total_page_num(url)
         self.logger.info("{} pages in total to fetch.".format(len(self.pages) + 1))
+        self.links = self.__fetch_all_links_on_page()
+        self.logger.info("Got {} links on page {}".format(len(self.links), url))
         for page in self.pages:
-            self.logger.info("Getting links from page {}".format(page))
             url = page   
             self.__make_call(url, 3)
             if self.__is_roboted():
                 self.__make_call(url, 3)
-            self.links.extend(self.__fetch_all_links_on_page()) 
+            links_on_page = self.__fetch_all_links_on_page()
+            self.links.extend(links_on_page) 
+            self.logger.info("Got {} links on page {}".format(len(links_on_page), url))
         return self.links

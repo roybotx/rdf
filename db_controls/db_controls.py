@@ -10,9 +10,9 @@ engine = None
 Session = sessionmaker()
 
 
-class Home_db_control():
+class HomeDBControl():
     def __init__(self, database):
-        self.logger = logging.getLogger("Home_db_control")
+        self.logger = logging.getLogger("HomeDBControl")
         db_url = {
             "database": database,
             "drivername": "mysql",
@@ -95,9 +95,9 @@ class Home_db_control():
             self.logger.error("Unknown error while closing database related. {}".format(str(e)))
 
 
-class Link_db_control():
+class LinkDBControl():
     def __init__(self, database):
-        self.logger = logging.getLogger("Link_db_control")
+        self.logger = logging.getLogger("LinkDBControl")
         db_url = {
             "database": database,
             "drivername": "mysql",

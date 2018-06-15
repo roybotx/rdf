@@ -4,12 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 from fake_useragent import UserAgent
 from models.home import Home
-from db_controls.db_controls import (Home_db_control, Link_db_control)
+from db_controls.db_controls import (HomeDBControl, LinkDBControl)
 import time
-from operations.home_operation import home_operation
-from operations.link_operation import link_operation
+from operations.home_operation import HomeOperation
+from operations.link_operation import LinkOperation
 from proxy_tool import Proxy
-import utils
 import logging
 
 
@@ -21,9 +20,7 @@ def get_zipcode_set():
     
     cur.close()
     db.close()
-    return zipcodes
-
-    
+    return zipcodes    
 
 
 def fetch_links(zipcode):
@@ -74,10 +71,10 @@ def testmethod_test_get_homes():
     
     links = get_links()
     logger.info("{} links in total".format(len(links)))
-    hm_db = Home_db_control("housing")
+    hm_db = HomeDBControl("housing")
     for link in links:
         try:
-            u = home_operation(BASE_URL + link)
+            u = HomeOperation(BASE_URL + link)
             u.fetch_data()
             if u.need_to_check:
                 hm_db.add_unit(Home(u.info))   
@@ -93,9 +90,9 @@ def testmethod_test_get_links():
     logger = logging.getLogger("testmethod_test_get_links")
     try:
         codes = get_zipcode_set()
-        lc = Link_db_control("housing")
+        lc = LinkDBControl("housing")
         for zipcode in codes:
-            lo = link_operation(zipcode)
+            lo = LinkOperation(zipcode)
             links = lo.fetch_all_pages()
             if links is not None and len(links) > 0:
                 lc.add_links(links)
@@ -113,8 +110,8 @@ def testmethod_test_get_links():
 def testmethod_test_get_links_98001():
     logger = logging.getLogger("testmethod_test_get_links_98001")
     try:
-        lc = Link_db_control("housing")
-        lo = link_operation(98011)
+        lc = LinkDBControl("housing")
+        lo = LinkOperation(98011)
         links = lo.fetch_all_pages()
         if links is not None and len(links) > 0:
             lc.add_links(links)
@@ -125,7 +122,7 @@ def testmethod_test_get_links_98001():
     
 
 def testmethod_test():
-    ho = home_operation("https://www.redfin.com/WA/Woodinville/15050-127th-Pl-NE-98072/home/143458227")
+    ho = HomeOperation("https://www.redfin.com/WA/Woodinville/15050-127th-Pl-NE-98072/home/143458227")
     ho.fetch_data()
     print(ho.info)
 
@@ -138,10 +135,19 @@ def testmethod_test_proxies():
         html = requests.get("http://ip.chinaz.com/getip.aspx", headers = {"user-agent": UA.random}, proxies = one, timeout = 10).text
         print(html)
 
-utils.config_logging()
-testmethod_test_get_links()
+
+def testmethod_get_single_home_page():
+    # no values for baths, beds, sqft
+    home = HomeOperation("https://www.redfin.com/WA/Seattle/156-15th-Ave-98122/unit-A/home/145445")
+    home.fetch_data()
+    print(home.info)
+
+
+# utils.config_logging()
+testmethod_get_single_home_page()
+# testmethod_test_get_links()
 # testmethod_test_proxies()
 # testmethod_test_get_links_98001()
-testmethod_test_get_homes()
+# testmethod_test_get_homes()
 
 

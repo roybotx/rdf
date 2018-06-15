@@ -5,12 +5,12 @@ import logging
 from proxy_tool import Proxy
 
 
-class link_operation(object):
+class LinkOperation(object):
     def __init__(self, zipcode):
         self.request_url = ZIPCODE_SEARCH_URL + str(zipcode)
         self.proxy_tool = Proxy()
         self.proxy_tool.get_proxies()
-        self.logger = logging.getLogger("link_operation")
+        self.logger = logging.getLogger("LinkOperation")
 
     def __calc_total_page_num(self, url):
         try:

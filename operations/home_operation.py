@@ -39,15 +39,6 @@ class HomeOperation(object):
         return "looks like our usage analysis algorithms think that you\n    might be a robot" in self.html.text
 
     def fetch_data(self):
-        # if "NOT FOR SALE" in str(self.html.contents):
-        #     self.logger.warning("NOT FOR SALE")
-        #     self.need_to_check = False
-        #     return
-        # elif "READY TO BUILD" in str(self.html.contents):
-        #     self.logger.warning("NOT FOR SALE - READY TO BUILD")
-        #     self.need_to_check = False
-        #     return
-        # self.fetch_main_content()
         self.__fetch_key_info()
         self.__fetch_basic_info()
         self.__postprocess_values()

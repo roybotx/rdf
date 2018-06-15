@@ -33,33 +33,41 @@ class HomeDBControl():
             return rows
         except SQLAlchemyError as e:
             self.logger.error(e)
+            self.session.rollback()
             self.close_engine()
 
     def add_unit(self, home_):
         try:
-            rows = self.select_units(mls = home_.mls)
+            rows = self.select_units(link = home_.link)
             if len(rows) != 0:
                 self.logger.info("record is alread there. skipping adding...")
                 return
-            self.logger.info("adding home on mls {}".format(home_.mls))
+            self.logger.info("adding {}, {}, {} {}".format(home_.address, home_.city, home_.state, home_.zipcode))
+            self.logger.info("=" * 23 + "dict" + "=" * 23)
+            self.logger.info(home_.__repr__())
+            self.logger.info("=" * 50)
             self.session.add(home_)
             self.session.commit()
             self.logger.info("successfully added.")
         except SQLAlchemyError as e:
             self.logger.error(e)
+            self.session.rollback()
             self.close_engine()
 
     def add_units(self, *homes):
-        errormls = str()
         try:
             for hm in homes[0]:
-                self.logger.info("adding home on mls {}".format(hm.mls))
-                errormls = hm.mls
+                address = "{}, {}, {} {}".format(hm.address, hm.city, hm.state, hm.zipcode)
+                self.logger.info("adding {}".format(address))
+                self.logger.info("=" * 23 + "dict" + "=" * 23)
+                self.logger.info(hm.__repr__())
+                self.logger.info("=" * 50)
                 self.session.add(hm)
             self.session.commit()
             self.logger.info("successfully added {} homes.".format(len(homes)))
         except SQLAlchemyError as e:
-            self.logger.error("error in adding home (#{}). {}".format(errormls, str(e)))
+            self.logger.error("error in adding home ({}). {}".format(address, str(e)))
+            self.session.rollback()
             self.close_engine()
 
     def update_unit_on_mls(self, mls, **values):
@@ -73,6 +81,7 @@ class HomeDBControl():
             self.session.commit()
         except SQLAlchemyError as e:
             self.logger.error(e)
+            self.session.rollback()
             self.close_engine()
 
     def delete_unit_on_mls(self, mls):
@@ -84,6 +93,7 @@ class HomeDBControl():
             self.logger.info("successfully deleted.")
         except SQLAlchemyError as e:
             self.logger.error(e)
+            self.session.rollback()
             self.close_engine()
 
     def close_engine(self):
@@ -96,16 +106,17 @@ class HomeDBControl():
 
 
 class LinkDBControl():
-    def __init__(self, database):
+    def __init__(self, link_type):
         self.logger = logging.getLogger("LinkDBControl")
         db_url = {
-            "database": database,
+            "database": "housing",
             "drivername": "mysql",
             "username": "root",
             "password": "",
             "host": "localhost",
             "port": 3306
         }
+        self.type = link_type
         global engine
         engine = create_engine(URL(**db_url), encoding = "utf8")
         Session.configure(bind=engine)
@@ -118,6 +129,7 @@ class LinkDBControl():
             return rows
         except SQLAlchemyError as e:
             self.logger.error(e)
+            self.session.rollback()
             self.close_engine()
 
     def add_links(self, *links):
@@ -126,7 +138,7 @@ class LinkDBControl():
             for l in links[0]:
                 found = self.select_links(link = l)
                 if found is not None and len(found) == 0:
-                    self.session.add(Link(l))
+                    self.session.add(Link(l, self.type.value))
                 else:
                     already_in.append(l)
             self.session.commit()
@@ -135,6 +147,7 @@ class LinkDBControl():
                 self.logger.info(already_in)
         except SQLAlchemyError as e:
             self.logger.error("error in adding link {}. {}".format(l, str(e)))
+            self.session.rollback()
             self.close_engine()
 
     def close_engine(self):

@@ -1,4 +1,4 @@
-from constants import ZIPCODE_SEARCH_URL, UA, WAIT_TIME
+from constants import UA, WAIT_TIME
 from bs4 import BeautifulSoup
 import requests
 import logging
@@ -6,8 +6,8 @@ from proxy_tool import Proxy
 
 
 class LinkOperation(object):
-    def __init__(self, zipcode):
-        self.request_url = ZIPCODE_SEARCH_URL + str(zipcode)
+    def __init__(self, url):
+        self.request_url = url
         self.proxy_tool = Proxy()
         self.proxy_tool.get_proxies()
         self.logger = logging.getLogger("LinkOperation")

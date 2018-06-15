@@ -27,7 +27,7 @@ class TestHomeOperation(unittest.TestCase):
         keys = [
             "address", "city", "state", "zipcode", "status", "redfin_estimate",
             "last_sold_price", "beds", "bath", "sqft", "per_sqft", "built",
-            "lot_size", "property_type", "style", "community", "county", "mls"
+            "property_type", "style", "community", "county", "mls"
         ]
         self.__call_fetch_data_func(url, keys)
 
@@ -35,7 +35,7 @@ class TestHomeOperation(unittest.TestCase):
         url = "https://www.redfin.com/WA/Tacoma/Autumn-Grove/AG-3517B/home/144415476"
         keys = [
             "address", "city", "state", "zipcode", "status", "price", "beds",
-            "bath", "sqft", "per_sqft", "ommunity", "county", "listing"
+            "bath", "sqft", "per_sqft", "community", "county", "listing"
         ]
         self.__call_fetch_data_func(url, keys)
 

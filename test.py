@@ -138,7 +138,7 @@ def testmethod_test_proxies():
 
 def testmethod_get_single_home_page():
     # no values for baths, beds, sqft
-    home = HomeOperation("https://www.redfin.com/WA/Seattle/156-15th-Ave-98122/unit-A/home/145445")
+    home = HomeOperation("https://www.redfin.com/WA/Bothell/20056-94th-Dr-NE-98011/unit-8/home/59704159")
     home.fetch_data()
     print(home.info)
 

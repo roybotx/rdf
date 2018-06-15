@@ -83,19 +83,25 @@ class HomeOperation(object):
                             self.info["state"] = state.getText().strip()
                         if state is not None:
                             self.info["zipcode"] = zipcode.getText().strip()
-                    values = top_stats.findAll(True, {"class": "statsValue"})
-                    labels = top_stats.findAll(True, {"class": "statsLabel"})
-                    sqft_label = top_stats.find("span", {"class": "sqft-label"})
-                    if sqft_label is not None:
-                        self.info["sqft"] = values[-1].getText()
-                        self.info["per_sqft"] = labels[-1].getText()
-                    values.pop(-1)
-                    labels.pop(-1)
-                    if len(values) == len(labels):
-                        for idx, value in enumerate(values):
-                            label = labels[idx].getText()
-                            label = self.__preprocess_field(label)
-                            self.info[label] = value.getText()
+                    
+                    info_blocks = top_stats.findAll("div", {"class": re.compile("info-block*")})
+                    if info_blocks is not None and len(info_blocks) > 0:
+                        for ib in info_blocks:
+                            if "avm" in ib.attrs.get("class"):
+                                value = ib.find("div", {"class": "statsValue"}).getText()
+                                label = ib.find("span", {"class": "avmLabel"}).getText()
+                                label = self.__preprocess_field(label)
+                                self.info[label] = value
+                            elif "sqft" in ib.attrs.get("class"):
+                                sqft_value = ib.find("span", {"class": "statsValue"}).getText()
+                                persqft_value = ib.find("div", {"class": "statsLabel"}).getText()
+                                self.info["sqft"] = sqft_value
+                                self.info["per_sqft"] = persqft_value
+                            else:
+                                value = ib.find("div", {"class": "statsValue"}).getText()
+                                label = ib.find("span", {"class": "statsLabel"}).getText()
+                                label = self.__preprocess_field(label)
+                                self.info[label] = value
                 if bot_stats is not None:
                     values = bot_stats.findAll(True, {"class": "value"})
                     labels = bot_stats.findAll(True, {"class": "label"})

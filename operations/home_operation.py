@@ -1,42 +1,15 @@
-from constants import UA, WAIT_TIME
-import requests
-from bs4 import BeautifulSoup
+import utils
 import re
 from datetime import datetime
 import logging
-from proxy_tool import Proxy
 
 
 class HomeOperation(object):
     def __init__(self, url):
         self.logger = logging.getLogger("HomeOperation")
-        self.proxy_tool = Proxy()
-        self.proxy_tool.get_proxies()
-        self.__make_call(url)
+        self.html = utils.make_call(url, 3)
         self.info = {"link": url}
-        self.need_to_check = True
         self.logger.info("Just fetched the data from {}.".format(url))
-
-    def __make_call(self, url):
-        headers = {"user-agent": UA.random}
-        for attempt in range(3):
-            try:
-                resp = requests.get(
-                    url,
-                    headers=headers,
-                    proxies=self.proxy_tool.get_available_proxy(WAIT_TIME))
-                self.html = BeautifulSoup(resp.text, "lxml")
-                if self.__is_roboted():
-                    raise Exception("Got roboted...")
-            except Exception as e:
-                self.logger.error("Failed to get resp from {}.{}".format(
-                    url, str(e)))
-                self.logger.error("Trying {} more time(3)...".format(3 - attempt))
-            else:
-                break
-
-    def __is_roboted(self):
-        return "looks like our usage analysis algorithms think that you\n    might be a robot" in self.html.text
 
     def fetch_data(self):
         self.__fetch_key_info()
@@ -169,6 +142,10 @@ class HomeOperation(object):
                 self.info[key] = self.__process_number_value(value)
             elif key in key_of_date_dict:
                 self.info[key] = self.__process_date_value(value)
+        if "NOT FOR SALE" in str(self.html.contents):
+            self.info["status"] = "NOT FOR SALE"
+        elif "READY TO BUILD" in str(self.html.contents):
+            self.info["status"] = "READY TO BUILD"
 
     def __process_number_value(self, value):
         value = value.replace("—", "0")

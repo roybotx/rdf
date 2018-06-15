@@ -1,11 +1,8 @@
 import MySQLdb
 import constants
 import requests
-from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 from models.home import Home
 from db_controls.db_controls import (HomeDBControl, LinkDBControl)
-import time
 from operations.home_operation import HomeOperation
 from operations.link_operation import LinkOperation
 from proxy_tool import Proxy
@@ -52,7 +49,7 @@ def testmethod_test_get_homes():
     logger = logging.getLogger("testmethod_test_get_homes")    
     links = get_links()
     logger.info("{} links in total".format(len(links)))
-    hm_db = HomeDBControl("housing")
+    hm_db = HomeDBControl()
     for link in links:
         try:
             u = HomeOperation(constants.BASE_URL + link)
@@ -122,41 +119,52 @@ def testmethod_get_single_home_page():
 
 def testmethod_get_all_sold_home_links_in_three_months(zipcode):
     url = constants.ZIPCODE_SEARCH_URL + str(zipcode) + constants.SOLD_IN_THREE_MONTHS_FILTER
-    _fetch_links_by_url_save_to_db(url, constants.HOME_TYPE.SOLD)
+    _fetch_links_by_url_save_to_db(url)
 
 
 def testmethod_get_all_sold_home_links(zipcode):
     url = constants.ZIPCODE_SEARCH_URL + str(zipcode) + constants.SOLD_ALL_FILTER
-    _fetch_links_by_url_save_to_db(url, constants.HOME_TYPE.SOLD)
+    _fetch_links_by_url_save_to_db(url)
 
 
 def testmethod_get_pending_home_links(zipcode):
     url = constants.ZIPCODE_SEARCH_URL + str(zipcode) + constants.PENDING_FILTER
-    _fetch_links_by_url_save_to_db(url, constants.HOME_TYPE.PENDING)
+    _fetch_links_by_url_save_to_db(url)
 
 
 def testmethod_get_open_home_links(zipcode):
     url = constants.ZIPCODE_SEARCH_URL + str(zipcode)
-    _fetch_links_by_url_save_to_db(url, constants.HOME_TYPE.ON_SALE)
+    _fetch_links_by_url_save_to_db(url)
 
 
-def _fetch_links_by_url_save_to_db(url, home_type):   
+def testmethod_get_all_homes_by_search_link(zipcode):
+    url = constants.ZIPCODE_SEARCH_URL + str(zipcode) + constants.ALL_HOMES_FILTER
+    _fetch_links_by_url_save_to_db(url)
+
+
+def _fetch_links_by_url_save_to_db(url):   
     logger = logging.getLogger("_fetch_links_by_url_save_to_db")
-    try: 
-        lc = LinkDBControl(home_type)
+    data = []
+    try:
         lo = LinkOperation(url)
         links = lo.fetch_all_pages()
         if links is not None and len(links) > 0:
-            lc.add_links(links)
+            for link in links:
+                ho = HomeOperation(link)
+                home_data = ho.fetch_data()
+                data.append(Home(home_data))
+            hc = HomeDBControl()
+            hc.add_units(data)
     except Exception as e:
         logger.error(e)
     finally:
-        lc.close_engine
+        hc.close_engine
 
 
 utils.config_logging()
 # testmethod_get_open_home_links(98011)
 # testmethod_get_all_sold_home_links(98011)
 # testmethod_get_pending_home_links(98011)
-testmethod_test_get_homes()
+testmethod_get_all_homes_by_search_link(98011)
+# testmethod_test_get_homes()
 

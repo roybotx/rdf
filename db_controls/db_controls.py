@@ -11,10 +11,10 @@ Session = sessionmaker()
 
 
 class HomeDBControl():
-    def __init__(self, database):
+    def __init__(self):
         self.logger = logging.getLogger("HomeDBControl")
         db_url = {
-            "database": database,
+            "database": "housing",
             "drivername": "mysql",
             "username": "root",
             "password": "",
@@ -64,7 +64,7 @@ class HomeDBControl():
                 self.logger.info("=" * 50)
                 self.session.add(hm)
             self.session.commit()
-            self.logger.info("successfully added {} homes.".format(len(homes)))
+            self.logger.info("successfully added {} homes.".format(len(homes[0])))
         except SQLAlchemyError as e:
             self.logger.error("error in adding home ({}). {}".format(address, str(e)))
             self.session.rollback()

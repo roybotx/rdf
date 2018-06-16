@@ -2,7 +2,7 @@ import MySQLdb
 import constants
 import requests
 from models.home import Home
-from db_controls.db_controls import (HomeDBControl, LinkDBControl)
+from db_controls.db_controls import HomeDBControl
 from operations.home_operation import HomeOperation
 from operations.link_operation import LinkOperation
 from proxy_tool import Proxy
@@ -60,46 +60,6 @@ def testmethod_test_get_homes():
             logger.error("error in {}.\n{}".format(link, str(e)))
     hm_db.close_engine()
     logger.info("testmethod_test_get_homes finished.")
-
-
-def testmethod_test_get_links_for_open_homes():
-    """ Get all open home links for all the zipcodes"""
-    db = MySQLdb.connect(host = "localhost", port = 3306, user = "root", passwd = "", db = "housing")
-    cur = db.cursor()    
-    logger = logging.getLogger("testmethod_test_get_links")
-    try:
-        codes = get_zipcode_set()
-        lc = LinkDBControl(constants.HOME_TYPE.ON_SALE)
-        for zipcode in codes:
-            url = constants.ZIPCODE_SEARCH_URL + zipcode
-            lo = LinkOperation(url)
-            links = lo.fetch_all_pages()
-            if links is not None and len(links) > 0:
-                lc.add_links(links)
-            cur.execute("update zipcodes set crawled = 1 where zcode = " + str(zipcode))
-            db.commit()
-        lc.close_engine()
-    except Exception as e:
-        logger.error("err in testmethod_test_get_links().{}".format(str(e)))
-    finally:
-        cur.close()
-        db.close()
-        logger.info("testmethod_test_get_links finished.")
-
-
-def testmethod_test_get_links_98001():
-    logger = logging.getLogger("testmethod_test_get_links_98001")
-    try:
-        url = constants.ZIPCODE_SEARCH_URL + str(98011)
-        lc = LinkDBControl(constants.HOME_TYPE.ON_SALE)
-        lo = LinkOperation(url)
-        links = lo.fetch_all_pages()
-        if links is not None and len(links) > 0:
-            lc.add_links(links)
-        lc.close_engine()
-    except Exception as e:
-        logger.error("err in testmethod_test_get_links_98001().{}".format(str(e)))    
-    logger.info("testmethod_test_get_links finished.")
     
 
 def testmethod_test_proxies():
@@ -138,13 +98,12 @@ def testmethod_get_open_home_links(zipcode):
 
 
 def testmethod_get_all_homes_by_search_link(zipcode):
-    url = constants.ZIPCODE_SEARCH_URL + str(zipcode) + constants.ALL_HOMES_FILTER
+    url = constants.ZIPCODE_SEARCH_URL + str(zipcode)
     _fetch_links_by_url_save_to_db(url)
 
 
 def _fetch_links_by_url_save_to_db(url):   
     logger = logging.getLogger("_fetch_links_by_url_save_to_db")
-    data = []
     try:
         lo = LinkOperation(url)
         links = lo.fetch_all_pages()
@@ -152,9 +111,11 @@ def _fetch_links_by_url_save_to_db(url):
             for link in links:
                 ho = HomeOperation(link)
                 home_data = ho.fetch_data()
-                data.append(Home(home_data))
-            hc = HomeDBControl()
-            hc.add_units(data)
+                hc = HomeDBControl()
+                if len(home_data) == 1:
+                    hc.add_unit(Home(home_data, False))
+                else:
+                    hc.add_unit(Home(home_data))
     except Exception as e:
         logger.error(e)
     finally:
@@ -165,6 +126,11 @@ utils.config_logging()
 # testmethod_get_open_home_links(98011)
 # testmethod_get_all_sold_home_links(98011)
 # testmethod_get_pending_home_links(98011)
-testmethod_get_all_homes_by_search_link(98011)
 # testmethod_test_get_homes()
+# testmethod_get_all_homes_by_search_link(98011)
+
+# ho = HomeOperation("https://www.redfin.com/WA/Bothell/11321-E-Riverside-Dr-98011/home/284605")
+# ho.info["sqft"] = "dfasdf"
+# hc = HomeDBControl()
+# hc.add_unit(Home(ho.info))
 

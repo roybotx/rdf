@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Date, Float
+from sqlalchemy import Column, Integer, String, Date, Float, Boolean
 from sqlalchemy.ext.declarative import declarative_base
 import datetime
 
@@ -11,6 +11,7 @@ class Home(base):
     price = Column(Float)
     lot_size = Column(Float)
     status = Column(String(10))
+    checked = Column(Boolean, default = True)
     built = Column(String)
     address = Column(String(200))
     redfin_estimate = Column(Float)
@@ -59,9 +60,11 @@ class Home(base):
 
     def __init__(self,
                  dic,
+                 check_ = True,
                  creation_date_=datetime.datetime.now(),
                  modification_date_=datetime.datetime.now()):
         for key in self.valid_keys:
             self.__dict__[key] = dic.get(key)
         self.creation_date = creation_date_
         self.modification_date = modification_date_
+        self.checked = check_
